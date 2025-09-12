@@ -19,12 +19,15 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
-    runtimeOnly("org.postgresql:postgresql")
+    implementation("org.springframework.boot:spring-boot-starter")             // Base Spring Boot
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")    // ← Ajouté pour JPA et JpaRepository
+    runtimeOnly("org.postgresql:postgresql")                                    // Pilote PostgreSQL
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 }
-
 tasks.withType<Test> {
     useJUnitPlatform()
 }
