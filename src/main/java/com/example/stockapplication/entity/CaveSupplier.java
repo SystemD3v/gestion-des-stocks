@@ -1,4 +1,4 @@
-package com.example.stockapplication.Controller;
+package com.example.stockapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,16 +9,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "cave_logs")
+@Table(name = "cave_supplier")
 
-public class CaveLogs {
-
+public class CaveSupplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "log_id")
+    @Column(name = "supplier_id")
 
     private Integer id;
-    private String operation;
-    private String description;
+    private Integer stock_id;
+    private Integer available_quantity;
+    private String supplier_name;
 
 }

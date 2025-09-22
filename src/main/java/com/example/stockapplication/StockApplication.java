@@ -1,4 +1,4 @@
-package com.example.stockapplication.Controller;
+package com.example.stockapplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

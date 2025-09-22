@@ -18,16 +18,25 @@ repositories {
     mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.5")
+    }
+}
+
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")             // Base Spring Boot
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")    // ← Ajouté pour JPA et JpaRepository
-    runtimeOnly("org.postgresql:postgresql")                                    // Pilote PostgreSQL
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtimeOnly("org.postgresql:postgresql")
+
     compileOnly("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
-    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
+
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }

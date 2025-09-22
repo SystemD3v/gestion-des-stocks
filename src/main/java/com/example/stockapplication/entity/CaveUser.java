@@ -1,4 +1,4 @@
-package com.example.stockapplication.Controller;
+package com.example.stockapplication.entity;
 
 
 import jakarta.persistence.*;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "cave_client")
+@Table(name = "cave_users")
 
 public class CaveUser {
 
