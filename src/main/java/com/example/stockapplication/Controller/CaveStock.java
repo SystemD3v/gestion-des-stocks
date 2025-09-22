@@ -1,4 +1,4 @@
-package com.example.stockapplication;
+package com.example.stockapplication.Controller;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,4 +22,5 @@ public class CaveStock {
     private String genre;
     private String area;
     private Integer available_quantity;
+
 }

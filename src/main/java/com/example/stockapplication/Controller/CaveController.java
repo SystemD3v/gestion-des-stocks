@@ -1,4 +1,4 @@
-package com.example.stockapplication;
+package com.example.stockapplication.Controller;
 
 
 import jakarta.persistence.*;
