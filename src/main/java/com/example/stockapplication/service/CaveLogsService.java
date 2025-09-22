@@ -15,7 +15,7 @@ public class CaveLogsService {
 
     private final CaveLogsRepo cavelogsRepo;
 
-    public List<CaveLogs> getAllData() {
+    public List<CaveLogs> getAllLogs() {      // ← renommé
         return cavelogsRepo.findAll();
     }
 }

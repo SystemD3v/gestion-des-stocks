@@ -1,5 +1,6 @@
 package com.example.stockapplication.service;
 
+import com.example.stockapplication.entity.CaveController;
 import com.example.stockapplication.entity.CaveStock;
 import com.example.stockapplication.repository.CaveStockRepo;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,9 @@ public class CaveStockService {
 
     private final CaveStockRepo cavestockRepo;
 
-    public List<CaveStock> getAllData() {
+    public List<CaveStock> getAllStock() {
         return cavestockRepo.findAll();
     }
+
+
 }
