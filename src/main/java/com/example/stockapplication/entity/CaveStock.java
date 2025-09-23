@@ -23,4 +23,5 @@ public class CaveStock {
     private String area;
     private Integer available_quantity;
     private Double price;
+    private Integer supplier_id;
 }
