@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "cave_controller")
 
-public class CaveController {
+public class CaveHandler {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "instance_id")
 
-    private Integer id;
+    private Integer instance_id;
     private Integer supply_group_id;
     private Integer request_amount;
     private Integer operation;

@@ -17,7 +17,7 @@ public class CaveLogs {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "log_id")
 
-    private Integer id;
+    private Integer log_id;
     private String operation;
     private String description;
 

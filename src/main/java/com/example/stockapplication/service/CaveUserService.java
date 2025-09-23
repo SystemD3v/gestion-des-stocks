@@ -18,4 +18,10 @@ public class CaveUserService {
     public List<CaveUser> getAllUsers() {
         return caveuserRepo.findAll();
     }
+
+    public List<String> getTotalsByLastName(String lastname) {
+        return caveuserRepo.getTotalsByLastName(lastname);
+    }
+
+
 }
