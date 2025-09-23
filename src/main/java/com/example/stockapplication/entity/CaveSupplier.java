@@ -22,4 +22,5 @@ public class CaveSupplier {
     private String supplier_name;
     private Double supplier_price;
     private String supplier_address;
+    private Integer supplier_stock_id;
 }
