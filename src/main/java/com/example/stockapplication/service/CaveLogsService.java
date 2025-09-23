@@ -17,5 +17,8 @@ public class CaveLogsService {
 
     public List<CaveLogs> getAllLogs() {      // ← renommé
         return cavelogsRepo.findAll();
+
+
+
     }
 }
