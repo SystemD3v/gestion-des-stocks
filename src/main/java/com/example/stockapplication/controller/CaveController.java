@@ -125,11 +125,11 @@ public class CaveController {
         return ResponseEntity.ok(cavestockService.getAllStock());
     }
 
-    private final CaveControllerService cavecontrollerService; // final + RequiredArgsConstructor
+    private final CaveHandlerService caveHandlerService; // final + RequiredArgsConstructor
 
-    @GetMapping("/get_controller")
-    public ResponseEntity<List<com.example.stockapplication.entity.CaveController>> getAllController() {
-        return ResponseEntity.ok(cavecontrollerService.getAllController());
+    @GetMapping("/get_handler")
+    public ResponseEntity<List<CaveHandler>> getAllHandler() {
+        return ResponseEntity.ok(caveHandlerService.getAllHandler());
     }
 
     @GetMapping("/get_user_by_lastname")

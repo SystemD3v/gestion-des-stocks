@@ -26,10 +26,12 @@ public class CaveUser {
     private String firstname;
 
 
-    private String total_bottles_bought;
+    private Integer total_bottles_bought;
     private String email;
     private String password;
     private String role;
+    private String address;
+    private Integer phone_number;
 
 
 
