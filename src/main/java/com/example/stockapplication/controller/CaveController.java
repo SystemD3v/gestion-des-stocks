@@ -44,6 +44,13 @@ public class CaveController {
 
     private final CaveControllerService cavecontrollerService; // final + RequiredArgsConstructor
 
+    @GetMapping("/get_stock/{id}")
+    public ResponseEntity<CaveStock> getStockById(@PathVariable Integer id)
+    {
+        return ResponseEntity.ok().body(cavestockService.getStockById(id));
+    }
+
+
     @GetMapping("/get_controller")
     public ResponseEntity<List<com.example.stockapplication.entity.CaveController>> getAllController() {
         return ResponseEntity.ok(cavecontrollerService.getAllController());
