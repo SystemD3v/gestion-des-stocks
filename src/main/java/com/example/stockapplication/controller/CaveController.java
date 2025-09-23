@@ -133,7 +133,8 @@ public class CaveController {
     }
 
     @GetMapping("/get_user_by_lastname")
-    public ResponseEntity<List<CaveUser>> getUserByLastName(@RequestParam("name") String name) {
-        return ResponseEntity.ok(caveuserService.getUsersByLastName(name));
+    public ResponseEntity<List<String>> getTotalsByLastName(@RequestParam("name") String name) {
+        return ResponseEntity.ok(caveuserService.getTotalsByLastName(name));
     }
+
 }

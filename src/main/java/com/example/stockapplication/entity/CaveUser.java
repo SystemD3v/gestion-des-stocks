@@ -19,13 +19,14 @@ public class CaveUser {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Integer id;
+    private Integer user_id;
 
-    @Column(name = "lastname")
-    private String lastName;
+    private String lastname;
 
     private String firstname;
-    private String total_bottle_bought;
+
+
+    private String total_bottles_bought;
     private String email;
     private String password;
     private String role;

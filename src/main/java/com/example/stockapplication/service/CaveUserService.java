@@ -7,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,8 +19,8 @@ public class CaveUserService {
         return caveuserRepo.findAll();
     }
 
-    public List<CaveUser> getUsersByLastName(String lastName) {
-        return caveuserRepo.findByLastName(lastName);
+    public List<String> getTotalsByLastName(String lastname) {
+        return caveuserRepo.getTotalsByLastName(lastname);
     }
 
 
