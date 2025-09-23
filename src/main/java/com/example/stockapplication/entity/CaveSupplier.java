@@ -16,9 +16,10 @@ public class CaveSupplier {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "supplier_id")
 
-    private Integer id;
+    private Integer supplier_id;
     private Integer stock_id;
     private Integer available_quantity;
     private String supplier_name;
-
+    private Double supplier_price;
+    private String supplier_address;
 }

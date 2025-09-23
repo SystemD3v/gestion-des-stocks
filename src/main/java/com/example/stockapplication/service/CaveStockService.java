@@ -1,6 +1,5 @@
 package com.example.stockapplication.service;
 
-import com.example.stockapplication.entity.CaveController;
 import com.example.stockapplication.entity.CaveStock;
 import com.example.stockapplication.repository.CaveStockRepo;
 import lombok.RequiredArgsConstructor;

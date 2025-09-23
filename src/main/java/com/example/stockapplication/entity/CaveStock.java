@@ -16,11 +16,11 @@ public class CaveStock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "stocks_id")
-    private Integer id;
+    private Integer stock_id;
     private String label;
-    private String years;
+    private Integer years;
     private String genre;
     private String area;
     private Integer available_quantity;
-
+    private Double price;
 }
