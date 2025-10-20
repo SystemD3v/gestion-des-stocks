@@ -20,16 +20,11 @@ public class CaveStockService {
         return cavestockRepo.findAll();
     }
 
-    public CaveStock getStockById(Integer id){
-        Optional<CaveStock> optionalCaveStock = cavestockRepo.findById(id);
-        if(optionalCaveStock.isPresent()){
-            return optionalCaveStock.get();
-        }
-        log.info("Employee with id: {} doesn't exist", id);
-        return null;
+    public Optional<CaveStock> getStockById(Integer id){
+        return  cavestockRepo.findById(id);
     }
 
-    public CaveStock getStockByGenre(String genre){
-        return (CaveStock) cavestockRepo.findByGenre(genre);
+    public List<CaveStock> getStockByGenre(String genre){
+        return cavestockRepo.findByGenre(genre);
     }
 }

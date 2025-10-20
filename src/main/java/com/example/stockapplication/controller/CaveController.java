@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -20,13 +21,20 @@ public class CaveController {
 
     private final CaveUserService caveuserService; // final + RequiredArgsConstructor
 
-    @GetMapping("/get_users")
-    public ResponseEntity<List<CaveUser>> getAllUsers() {
-        return ResponseEntity.ok(caveuserService.getAllUsers());
-    }
-
+    private final CaveStockService cavestockService;
 
     private final CaveLogsService cavelogsService; // final + RequiredArgsConstructor
+
+    private final CaveHandlerService caveHandlerService; // final + RequiredArgsConstructor
+
+    private final CaveSupplierService cavesupplierService; // final + RequiredArgsConstructor
+
+
+    /***********************************************************
+     *
+     * CAVE_LOGS
+     *
+     **********************************************************/
 
     /**
      * Get all logs
@@ -112,30 +120,69 @@ public class CaveController {
         private String description;
     }
 
-    private final CaveSupplierService cavesupplierService; // final + RequiredArgsConstructor
 
-    @GetMapping("/get_supplier")
-    public ResponseEntity<List<CaveSupplier>> getAllSupplier() {
-        return ResponseEntity.ok(cavesupplierService.getAllLogs());
+    /***********************************************************
+     *
+     * CAVE_STOCK
+     *
+     **********************************************************/
+
+    @GetMapping("/get_stock")
+    public ResponseEntity<List<CaveStock>> getAllStock(){
+        return ResponseEntity.ok(cavestockService.getAllStock());
     }
-
-    private final CaveStockService cavestockService; // final + RequiredArgsConstructor
 
     @GetMapping("/get_stock/{genre}")
-    public ResponseEntity<List<CaveStock>> getAllStock(@PathVariable String genre) {
-        return ResponseEntity.ok(Collections.singletonList(cavestockService.getStockByGenre(genre)));
+    public ResponseEntity<List<CaveStock>> getStockByGenre(@PathVariable String genre) {
+        return ResponseEntity.ok(cavestockService.getStockByGenre(genre));
     }
 
-    private final CaveHandlerService caveHandlerService; // final + RequiredArgsConstructor
+    @GetMapping("/get_stockById/{id}")
+    public ResponseEntity<Optional<CaveStock>> getStockById(@PathVariable Integer id){
+        return ResponseEntity.ok(cavestockService.getStockById(id));
+    }
+
+
+    /***********************************************************
+     *
+     * CAVE_HANDLER
+     *
+     **********************************************************/
+
 
     @GetMapping("/get_handler")
     public ResponseEntity<List<CaveHandler>> getAllHandler() {
         return ResponseEntity.ok(caveHandlerService.getAllHandler());
     }
 
+
+    /***********************************************************
+     *
+     * CAVE_USER
+     *
+     **********************************************************/
+
+
     @GetMapping("/get_user_by_lastname")
     public ResponseEntity<List<String>> getTotalsByLastName(@RequestParam("name") String name) {
         return ResponseEntity.ok(caveuserService.getTotalsByLastName(name));
+    }
+
+    @GetMapping("/get_users")
+    public ResponseEntity<List<CaveUser>> getAllUsers() {
+        return ResponseEntity.ok(caveuserService.getAllUsers());
+    }
+
+
+    /***********************************************************
+     *
+     * CAVE_SUPPLIER
+     *
+     **********************************************************/
+
+    @GetMapping("/get_supplier")
+    public ResponseEntity<List<CaveSupplier>> getAllSupplier() {
+        return ResponseEntity.ok(cavesupplierService.getAllLogs());
     }
 
 }
