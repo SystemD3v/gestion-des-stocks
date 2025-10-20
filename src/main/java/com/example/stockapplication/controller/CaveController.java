@@ -2,6 +2,7 @@ package com.example.stockapplication.controller;
 
 import com.example.stockapplication.entity.*;
 import com.example.stockapplication.service.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -142,6 +143,20 @@ public class CaveController {
         return ResponseEntity.ok(cavestockService.getStockById(id));
     }
 
+    @GetMapping("/get_stockByLabel/{label}")
+    public ResponseEntity<List<CaveStock>> getStockByLabel(@PathVariable String label){
+        return ResponseEntity.ok(cavestockService.getStockByLabel(label));
+    }
+
+    @GetMapping("/get_stockByYear/{firstYear}/{secondYear}")
+    public ResponseEntity<List<CaveStock>> getStockByYear(@PathVariable Integer firstYear, @PathVariable Integer secondYear){
+        return ResponseEntity.ok(cavestockService.getStockByYears(firstYear, secondYear));
+    }
+
+    @GetMapping("/get_stockByPrice/{lowPrice}/{highPrice}")
+    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Integer lowPrice, @PathVariable Integer highPrice){
+        return ResponseEntity.ok(cavestockService.getStockByPrice(lowPrice, highPrice));
+    }
 
     /***********************************************************
      *

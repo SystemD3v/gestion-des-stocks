@@ -11,4 +11,10 @@ public interface CaveStockRepo extends JpaRepository<CaveStock, Integer>{
     List<CaveStock> findByGenre(String genre);
 
     Optional<CaveStock> findById(Integer stock_id);
+
+    List<CaveStock> findByLabel(String label);
+
+    List<CaveStock> findByYearsBetween(Integer yearsAfter, Integer yearsBefore);
+
+    List<CaveStock> findByPriceBetween(Integer lowPrice, Integer highPrice);
 }

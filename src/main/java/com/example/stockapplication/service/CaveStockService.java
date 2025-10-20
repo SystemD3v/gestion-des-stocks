@@ -27,4 +27,16 @@ public class CaveStockService {
     public List<CaveStock> getStockByGenre(String genre){
         return cavestockRepo.findByGenre(genre);
     }
+
+    public List<CaveStock> getStockByLabel(String label){
+        return cavestockRepo.findByLabel(label);
+    }
+
+    public List<CaveStock> getStockByYears(Integer firstYear, Integer secondYear){
+        return cavestockRepo.findByYearsBetween(firstYear, secondYear);
+    }
+
+    public List<CaveStock> getStockByPrice(Integer lowPrice, Integer highPrice){
+        return cavestockRepo.findByPriceBetween(lowPrice, highPrice);
+    }
 }
