@@ -19,9 +19,8 @@ public class CaveUserService {
         return caveuserRepo.findAll();
     }
 
-    public List<String> getTotalsByLastName(String lastname) {
-        return caveuserRepo.getTotalsByLastName(lastname);
+    public List<CaveUser> getUserByLastname(String lastname) {
+        return caveuserRepo.findAllByLastname(lastname);
     }
-
 
 }

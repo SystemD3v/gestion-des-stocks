@@ -1,7 +1,9 @@
 package com.example.stockapplication.controller;
 
 import com.example.stockapplication.entity.*;
+import com.example.stockapplication.repository.CaveUserRepo;
 import com.example.stockapplication.service.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,12 +30,6 @@ public class CaveController {
 
     private final CaveSupplierService cavesupplierService; // final + RequiredArgsConstructor
 
-
-    /***********************************************************
-     *
-     * CAVE_LOGS
-     *
-     **********************************************************/
 
     /**
      * Get all logs
@@ -142,6 +137,20 @@ public class CaveController {
         return ResponseEntity.ok(cavestockService.getStockById(id));
     }
 
+    @GetMapping("/get_stockByLabel/{label}")
+    public ResponseEntity<List<CaveStock>> getStockByLabel(@PathVariable String label){
+        return ResponseEntity.ok(cavestockService.getStockByLabel(label));
+    }
+
+    @GetMapping("/get_stockByYear/{firstYear}/{secondYear}")
+    public ResponseEntity<List<CaveStock>> getStockByYear(@PathVariable Integer firstYear, @PathVariable Integer secondYear){
+        return ResponseEntity.ok(cavestockService.getStockByYears(firstYear, secondYear));
+    }
+
+    @GetMapping("/get_stockByPrice/{lowPrice}/{highPrice}")
+    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Integer lowPrice, @PathVariable Integer highPrice){
+        return ResponseEntity.ok(cavestockService.getStockByPrice(lowPrice, highPrice));
+    }
 
     /***********************************************************
      *
@@ -163,9 +172,9 @@ public class CaveController {
      **********************************************************/
 
 
-    @GetMapping("/get_user_by_lastname")
-    public ResponseEntity<List<String>> getTotalsByLastName(@RequestParam("name") String name) {
-        return ResponseEntity.ok(caveuserService.getTotalsByLastName(name));
+    @GetMapping("/get_user_by_lastname/{lastname}")
+    public ResponseEntity<List<CaveUser>> getUserByLastname(@PathVariable String lastname) {
+        return ResponseEntity.ok(caveuserService.getUserByLastname(lastname));
     }
 
     @GetMapping("/get_users")
