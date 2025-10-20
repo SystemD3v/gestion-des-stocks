@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface CaveStockRepo extends JpaRepository<CaveStock, Integer>{
 
+    List<CaveStock> findByGenre(String genre);
 
-    List<CaveStock> findByGenre(String type);
+    CaveStock getStockById(Integer stock_id);
 }

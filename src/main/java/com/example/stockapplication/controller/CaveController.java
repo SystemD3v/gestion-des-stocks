@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -120,9 +121,9 @@ public class CaveController {
 
     private final CaveStockService cavestockService; // final + RequiredArgsConstructor
 
-    @GetMapping("/get_stock")
-    public ResponseEntity<List<CaveStock>> getAllStock() {
-        return ResponseEntity.ok(cavestockService.getAllStock());
+    @GetMapping("/get_stock/{genre}")
+    public ResponseEntity<List<CaveStock>> getAllStock(@PathVariable String genre) {
+        return ResponseEntity.ok(Collections.singletonList(cavestockService.getStockByGenre(genre)));
     }
 
     private final CaveHandlerService caveHandlerService; // final + RequiredArgsConstructor

@@ -29,8 +29,7 @@ public class CaveStockService {
         return null;
     }
 
-    public CaveStock getStockByType(String type){
-        return (CaveStock) cavestockRepo.findByGenre(type);
-
+    public CaveStock getStockByGenre(String genre){
+        return (CaveStock) cavestockRepo.findByGenre(genre);
     }
 }
