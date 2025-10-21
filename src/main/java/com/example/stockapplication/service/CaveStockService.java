@@ -2,7 +2,6 @@ package com.example.stockapplication.service;
 
 import com.example.stockapplication.entity.CaveStock;
 import com.example.stockapplication.repository.CaveStockRepo;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -63,7 +62,7 @@ public class CaveStockService {
                 caveStock.setArea(value);
                 break;
             case "available_quantity":
-                caveStock.setQuantity(Integer.valueOf(value));
+                caveStock.setAvailable_quantity(Integer.valueOf(value));
                 break;
             case "price":
                 caveStock.setPrice(Double.valueOf(value));
