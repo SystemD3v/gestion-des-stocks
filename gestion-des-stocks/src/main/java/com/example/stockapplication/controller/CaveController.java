@@ -213,6 +213,11 @@ public class CaveController {
                 .body("User created successfully");
     }
 
+    @GetMapping("/updateUser/{id}/{var}/{value}")
+    public void updateUser(@PathVariable Integer id, @PathVariable String var, @PathVariable String value){
+        caveuserService.updateUser(id,var,value);
+    }
+
     /***********************************************************
      *
      * CAVE_SUPPLIER
