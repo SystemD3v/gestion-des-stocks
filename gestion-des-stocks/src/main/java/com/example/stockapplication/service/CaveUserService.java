@@ -1,5 +1,6 @@
 package com.example.stockapplication.service;
 
+import com.example.stockapplication.entity.CaveStock;
 import com.example.stockapplication.entity.CaveUser;
 import com.example.stockapplication.repository.CaveUserRepo;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +36,38 @@ public class CaveUserService {
 
     public void deleteById(Integer id) {
 
+    }
+
+    public void updateUser(Integer id, String var, String value){
+
+        CaveUser caveUser = caveuserRepo.findById(id).get();
+        switch (var) {
+            case "lastname":
+                caveUser.setLastname(value);
+                break;
+            case "firstname":
+                caveUser.setFirstname(value);
+                break;
+            case "email":
+                caveUser.setEmail(value);
+                break;
+            case "password":
+                caveUser.setPassword(value);
+                break;
+            case "role":
+                caveUser.setRole(value);
+                break;
+            case "address":
+                caveUser.setAddress(value);
+                break;
+            case "phone_number":
+                caveUser.setPhone_number(value);
+                break;
+            default:
+                break;
+        };
+
+        caveuserRepo.save(caveUser);
     }
 
 
