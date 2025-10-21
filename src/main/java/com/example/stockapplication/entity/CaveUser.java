@@ -31,7 +31,7 @@ public class CaveUser {
     private String password;
     private String role;
     private String address;
-    private Integer phone_number;
+    private String phone_number;
 
 
 

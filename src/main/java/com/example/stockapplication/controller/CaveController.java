@@ -3,11 +3,13 @@ package com.example.stockapplication.controller;
 import com.example.stockapplication.entity.*;
 import com.example.stockapplication.service.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -154,8 +156,25 @@ public class CaveController {
     }
 
     @GetMapping("/get_stockByPrice/{lowPrice}/{highPrice}")
-    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Integer lowPrice, @PathVariable Integer highPrice){
+    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Double lowPrice, @PathVariable Double highPrice){
         return ResponseEntity.ok(cavestockService.getStockByPrice(lowPrice, highPrice));
+    }
+
+    @GetMapping("/delete_stockById/{id}")
+    public ResponseEntity<CaveStock> deleteStockById(@PathVariable Integer id){
+        return ResponseEntity.ok(cavestockService.deleteStockById(id));
+    }
+
+    @GetMapping("/updateStock/{id}/{var}/{value}")
+    public void updateStock(@PathVariable Integer id, @PathVariable String var, @PathVariable String value){
+        cavestockService.update(id, var, value);
+    }
+
+    @PostMapping(path= "/createStock")
+    public CaveStock createStock(@RequestBody CaveStock caveStock){
+        cavestockService.createStock(caveStock);
+
+        return caveStock;
     }
 
     /***********************************************************

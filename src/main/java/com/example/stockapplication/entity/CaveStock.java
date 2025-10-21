@@ -21,7 +21,7 @@ public class CaveStock {
     private Integer years;
     private String genre;
     private String area;
-    private Integer available_quantity;
+    private Integer quantity;
     private Double price;
     private Integer supplier_id;
 }
