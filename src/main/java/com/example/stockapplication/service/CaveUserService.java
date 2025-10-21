@@ -1,5 +1,6 @@
 package com.example.stockapplication.service;
 
+import com.example.stockapplication.DTO.UserSummary;
 import com.example.stockapplication.entity.CaveUser;
 import com.example.stockapplication.repository.CaveUserRepo;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,8 +21,24 @@ public class CaveUserService {
         return caveuserRepo.findAll();
     }
 
-    public List<CaveUser> getUserByLastname(String lastname) {
-        return caveuserRepo.findAllByLastname(lastname);
+    public List<UserSummary> getUserByLastname(String lastname) {
+        return caveuserRepo.findAllByLastname(lastname)
+                .stream()
+                .map(CaveUser -> new UserSummary(
+                        CaveUser.getLastname(),
+                        CaveUser.getFirstname(),
+                        CaveUser.getTotal_bottles_bought(),
+                        CaveUser.getEmail()
+
+                ))
+                .collect(Collectors.toList());
     }
 
+   public CaveUser deleteCaveUserById(Integer id) {
+        return caveuserRepo.deleteCaveUserById(id);
+   }
+
+    public CaveUser createCaveUser(CaveUser caveUser) {
+        return caveuserRepo.save(caveUser);
+    }
 }

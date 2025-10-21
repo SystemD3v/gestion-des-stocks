@@ -1,12 +1,15 @@
 package com.example.stockapplication.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Optional;
+
+import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,8 +21,9 @@ public class CaveUser {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
+
     @Column(name = "user_id")
-    private Integer user_id;
+    private Integer id;
 
     private String lastname;
 
