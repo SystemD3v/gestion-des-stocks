@@ -1,12 +1,12 @@
 package com.example.stockapplication.controller;
 
-import com.example.stockapplication.DTO.UserSummary;
 import com.example.stockapplication.entity.*;
 import com.example.stockapplication.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.example.stockapplication.dto.UserSummary;
 
 import java.net.URI;
 import java.util.List;
@@ -133,7 +133,7 @@ public class CaveController {
 
     @DeleteMapping("/delete_users/{id}")
     String deleteUser(@PathVariable Integer id) {
-        caveUserRepo.deleteById(id);
+        caveuserService.deleteById(id);
         return "User bien delete : " + id ;
     }
 
@@ -144,12 +144,6 @@ public class CaveController {
                 .created(URI.create("/api/v1/users/" + createdUser.getId()))
                 .body("User created successfully");
     }
-
-
-
-
-
-
 
     /***********************************************************
      *
