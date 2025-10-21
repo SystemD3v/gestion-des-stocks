@@ -1,10 +1,9 @@
 package com.example.stockapplication.controller;
 
+import com.example.stockapplication.DTO.UserSummary;
 import com.example.stockapplication.entity.*;
 import com.example.stockapplication.repository.CaveUserRepo;
 import com.example.stockapplication.service.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +13,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,6 +32,7 @@ public class CaveController {
     private final CaveHandlerService caveHandlerService; // final + RequiredArgsConstructor
 
     private final CaveSupplierService cavesupplierService; // final + RequiredArgsConstructor
+    private final CaveUserRepo caveUserRepo;
 
 
     /**
@@ -150,25 +152,8 @@ public class CaveController {
     }
 
     @GetMapping("/get_stockByPrice/{lowPrice}/{highPrice}")
-    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Double lowPrice, @PathVariable Double highPrice){
+    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Integer lowPrice, @PathVariable Integer highPrice){
         return ResponseEntity.ok(cavestockService.getStockByPrice(lowPrice, highPrice));
-    }
-
-    @GetMapping("/delete_stockById/{id}")
-    public ResponseEntity<CaveStock> deleteStockById(@PathVariable Integer id){
-        return ResponseEntity.ok(cavestockService.deleteStockById(id));
-    }
-
-    @GetMapping("/updateStock/{id}/{var}/{value}")
-    public void updateStock(@PathVariable Integer id, @PathVariable String var, @PathVariable String value){
-        cavestockService.update(id, var, value);
-    }
-
-    @PostMapping(path= "/createStock")
-    public CaveStock createStock(@RequestBody CaveStock caveStock){
-        cavestockService.createStock(caveStock);
-
-        return caveStock;
     }
 
     /***********************************************************
@@ -192,7 +177,7 @@ public class CaveController {
 
 
     @GetMapping("/get_user_by_lastname/{lastname}")
-    public ResponseEntity<List<CaveUser>> getUserByLastname(@PathVariable String lastname) {
+    public ResponseEntity<List<UserSummary>> getUserByLastname(@PathVariable String lastname) {
         return ResponseEntity.ok(caveuserService.getUserByLastname(lastname));
     }
 
@@ -200,6 +185,25 @@ public class CaveController {
     public ResponseEntity<List<CaveUser>> getAllUsers() {
         return ResponseEntity.ok(caveuserService.getAllUsers());
     }
+
+    @DeleteMapping("/delete_users/{id}")
+    String deleteUser(@PathVariable Integer id) {
+        caveUserRepo.deleteById(id);
+        return "User bien delete : " + id ;
+    }
+
+    @PostMapping("/create_user")
+    public ResponseEntity<String> createUser(@RequestBody CaveUser caveUser) {
+        CaveUser createdUser = caveuserService.createCaveUser(caveUser);
+        return ResponseEntity
+                .created(URI.create("/api/v1/users/" + createdUser.getId()))
+                .body("User created successfully");
+    }
+
+
+
+
+
 
 
     /***********************************************************
