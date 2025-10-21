@@ -22,4 +22,9 @@ public class CaveSupplierService {
     public List<CaveSupplier> getCaveSupplierByid(int id) {
         return cavesupplierRepo.getCaveSupplierByid(id);
     }
+
+    public boolean updateSupplier(int id, String name,String phoneNumber, String address) {
+        int updatedRows = cavesupplierRepo.updateSupplierById(id, name, phoneNumber,address);
+        return updatedRows > 0;
+    }
 }

@@ -161,4 +161,9 @@ public class CaveController {
         return ResponseEntity.ok(cavesupplierService.getCaveSupplierByid(id));
     }
 
+    @GetMapping("/edit/{id}/{name}/{phone}/{address}")
+    public ResponseEntity<Boolean> updateSupplierById(@PathVariable int id, @PathVariable String name, @PathVariable String phone, @PathVariable String address) {
+        return ResponseEntity.ok(cavesupplierService.updateSupplier(id, name, phone, address));
+    }
+
 }
