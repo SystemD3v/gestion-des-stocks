@@ -17,7 +17,7 @@ public class CaveSupplier {
     @Column(name = "supplier_id")
 
     private Integer supplier_id;
-    private String supplier_name;
+    private String name;
     private String supplier_address;
     private Integer supplier_phone;
 }
