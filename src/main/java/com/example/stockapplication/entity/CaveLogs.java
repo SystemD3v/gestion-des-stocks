@@ -10,15 +10,13 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "cave_logs")
-
 public class CaveLogs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "log_id")
+    private Integer logId;
 
-    private Integer log_id;
     private String operation;
     private String description;
-
 }
