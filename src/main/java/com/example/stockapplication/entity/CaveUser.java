@@ -24,12 +24,8 @@ public class CaveUser {
 
     @Column(name = "user_id")
     private Integer id;
-
     private String lastname;
-
     private String firstname;
-
-
     private Integer total_bottles_bought;
     private String email;
     private String password;

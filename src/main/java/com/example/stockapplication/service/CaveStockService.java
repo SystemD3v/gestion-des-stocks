@@ -2,6 +2,7 @@ package com.example.stockapplication.service;
 
 import com.example.stockapplication.entity.CaveStock;
 import com.example.stockapplication.repository.CaveStockRepo;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -40,8 +41,8 @@ public class CaveStockService {
         return cavestockRepo.findByPriceBetween(lowPrice, highPrice);
     }
 
-    public CaveStock deleteStockById(Integer id){
-        return cavestockRepo.deleteCaveStockById(id);
+    public void deleteStockById(Integer id){
+        cavestockRepo.deleteById(id);
     }
 
     public void update(Integer id, String var, String value){

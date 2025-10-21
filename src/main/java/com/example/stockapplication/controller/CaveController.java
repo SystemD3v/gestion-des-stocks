@@ -4,6 +4,7 @@ import com.example.stockapplication.DTO.UserSummary;
 import com.example.stockapplication.entity.*;
 import com.example.stockapplication.repository.CaveUserRepo;
 import com.example.stockapplication.service.*;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,6 +33,7 @@ public class CaveController {
     private final CaveHandlerService caveHandlerService; // final + RequiredArgsConstructor
 
     private final CaveSupplierService cavesupplierService; // final + RequiredArgsConstructor
+
     private final CaveUserRepo caveUserRepo;
 
 
@@ -152,8 +154,28 @@ public class CaveController {
     }
 
     @GetMapping("/get_stockByPrice/{lowPrice}/{highPrice}")
-    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Integer lowPrice, @PathVariable Integer highPrice){
+    public ResponseEntity<List<CaveStock>> getStockByPrice(@PathVariable Double lowPrice, @PathVariable Double highPrice){
         return ResponseEntity.ok(cavestockService.getStockByPrice(lowPrice, highPrice));
+    }
+
+    @DeleteMapping("/deleteStockById/{id}")
+    public String deleteStock(@PathVariable Integer id){
+        cavestockService.deleteStockById(id);
+
+        return "Deleted";
+    }
+
+    @GetMapping("/updateStock/{id}/{var}/{value}")
+    public void updateStock(@PathVariable Integer id, @PathVariable String var, @PathVariable String value){
+        cavestockService.update(id,var,value);
+    }
+
+    @PostMapping("/createStock")
+    public ResponseEntity<String> createStock(@RequestBody CaveStock caveStock) {
+        CaveStock newStock = cavestockService.createStock(caveStock);
+        return ResponseEntity
+                .created(URI.create("/api/v1/stock/" + newStock.getId()))
+                .body("Stock created successfully");
     }
 
     /***********************************************************
@@ -199,12 +221,6 @@ public class CaveController {
                 .created(URI.create("/api/v1/users/" + createdUser.getId()))
                 .body("User created successfully");
     }
-
-
-
-
-
-
 
     /***********************************************************
      *

@@ -29,7 +29,4 @@ public interface CaveStockRepo extends JpaRepository<CaveStock, Integer>{
      *  Delete
      *
      * */
-
-   CaveStock  deleteCaveStockById(Integer id);
-
 }
