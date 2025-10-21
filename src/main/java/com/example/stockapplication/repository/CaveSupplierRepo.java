@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface CaveSupplierRepo extends JpaRepository<CaveSupplier, Integer>{
 
-    List<CaveSupplier> getCaveSupplierByName(String name);
+    List<CaveSupplier> getCaveSupplierByid(int id);
 }

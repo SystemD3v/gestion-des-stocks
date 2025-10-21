@@ -36,48 +36,7 @@ public class CaveStockService {
         return cavestockRepo.findByYearsBetween(firstYear, secondYear);
     }
 
-    public List<CaveStock> getStockByPrice(Double lowPrice, Double highPrice){
+    public List<CaveStock> getStockByPrice(Integer lowPrice, Integer highPrice){
         return cavestockRepo.findByPriceBetween(lowPrice, highPrice);
-    }
-
-    public CaveStock deleteStockById(Integer id){
-        return cavestockRepo.deleteCaveStockById(id);
-    }
-
-    public void update(Integer id, String var, String value){
-
-        CaveStock caveStock = cavestockRepo.findById(id).get();
-
-         switch (var) {
-            case "label":
-                caveStock.setLabel(value);
-                break;
-            case "genre":
-                caveStock.setGenre(value);
-                break;
-            case "years":
-                caveStock.setYears(Integer.valueOf(value));
-                break;
-            case "area":
-                caveStock.setArea(value);
-                break;
-            case "available_quantity":
-                caveStock.setQuantity(Integer.valueOf(value));
-                break;
-            case "price":
-                caveStock.setPrice(Double.valueOf(value));
-                break;
-            case "supplier":
-                caveStock.setSupplier_id(Integer.valueOf(value));
-                break;
-             default:
-                 break;
-        };
-
-         cavestockRepo.save(caveStock);
-    }
-
-    public CaveStock createStock(CaveStock caveStock){
-        return cavestockRepo.save(caveStock);
     }
 }

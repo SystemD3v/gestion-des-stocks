@@ -217,4 +217,9 @@ public class CaveController {
         return ResponseEntity.ok(cavesupplierService.getAllLogs());
     }
 
+    @GetMapping("/get_supplier/{id}")
+    public ResponseEntity<List<CaveSupplier>> getCaveSupplierByid(@PathVariable int id) {
+        return ResponseEntity.ok(cavesupplierService.getCaveSupplierByid(id));
+    }
+
 }
