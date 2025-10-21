@@ -8,6 +8,12 @@ import java.util.Optional;
 
 public interface CaveStockRepo extends JpaRepository<CaveStock, Integer>{
 
+    /*
+    *
+    *  Read
+    *
+    * */
+
     List<CaveStock> findByGenre(String genre);
 
     Optional<CaveStock> findById(Integer stock_id);
@@ -16,5 +22,14 @@ public interface CaveStockRepo extends JpaRepository<CaveStock, Integer>{
 
     List<CaveStock> findByYearsBetween(Integer yearsAfter, Integer yearsBefore);
 
-    List<CaveStock> findByPriceBetween(Integer lowPrice, Integer highPrice);
+    List<CaveStock> findByPriceBetween(Double price, Double price2);
+
+    /*
+     *
+     *  Delete
+     *
+     * */
+
+   CaveStock  deleteCaveStockById(Integer id);
+
 }
