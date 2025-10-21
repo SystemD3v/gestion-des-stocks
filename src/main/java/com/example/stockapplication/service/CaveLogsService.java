@@ -37,4 +37,5 @@ public class CaveLogsService {
         newLog.setDescription(description);
         return caveLogsRepo.save(newLog);
     }
+
 }
