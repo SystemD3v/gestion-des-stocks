@@ -18,15 +18,15 @@ public class CaveHandler {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "instance_id")
 
-    private Integer instance_id;
-    private Integer supply_group_id;
-    private Integer request_amount;
+    private Integer id;
+    private Integer supplyGroupId;
+    private Integer requestAmount;
     private Integer operation;
     private boolean validated;
     private boolean completed;
-    private String order_timestamp;
-    private Integer stock_id;
-    private Integer supplier_id;
-    private Integer user_id;
+    private String orderTimestamp;
+    private Integer stockId;
+    private Integer supplierId;
+    private Integer userId;
 
 }

@@ -132,6 +132,55 @@ public class CaveController {
         return ResponseEntity.ok(caveHandlerService.getAllHandler());
     }
 
+    @GetMapping("/getInstanceById/{id}")
+    public ResponseEntity<Optional<CaveHandler>> getInstanceById(@PathVariable Integer id){
+        return ResponseEntity.ok(caveHandlerService.findById(id));
+    }
+
+    @GetMapping("/getInstanceByTimestamp/{firstTimestamp}/{secondTimestamp}")
+    public ResponseEntity<List<CaveHandler>> getInstanceByTimestamp(@PathVariable String firstTimestamp, @PathVariable String secondTimestamp){
+        return ResponseEntity.ok(caveHandlerService.findByOrderTimestampBetween(firstTimestamp, secondTimestamp));
+    }
+
+    @GetMapping("/getInstanceByUserId/{id}")
+    public ResponseEntity<List<CaveHandler>> getInstanceByUserId(@PathVariable Integer id){
+        return ResponseEntity.ok(caveHandlerService.findByUserId(id));
+    }
+
+    @GetMapping("/getInstanceByStockId/{id}")
+    public ResponseEntity<List<CaveHandler>> getInstanceByStockId(@PathVariable Integer id){
+        return ResponseEntity.ok(caveHandlerService.findByStockId(id));
+    }
+
+    @GetMapping("/getInstanceByValidation/{bool}")
+    public ResponseEntity<List<CaveHandler>> getInstanceByValidation(@PathVariable boolean bool){
+        return ResponseEntity.ok(caveHandlerService.findByValidated(bool));
+    }
+
+    @GetMapping("/getInstanceByComplete/{bool}")
+    public ResponseEntity<List<CaveHandler>> getInstanceByComplete(@PathVariable boolean bool){
+        return ResponseEntity.ok(caveHandlerService.findByCompleted(bool));
+    }
+
+    @DeleteMapping("/deleteInstance/{id}")
+    public String deleteInstanceById(@PathVariable Integer id){
+        caveHandlerService.deleteHandlerById(id);
+
+        return "Deleted";
+    }
+
+    @PostMapping("/createInstance")
+    public ResponseEntity<String> createInstance(@RequestBody CaveHandler caveHandler) {
+        CaveHandler newInstance = caveHandlerService.createInstance(caveHandler);
+        return ResponseEntity
+                .created(URI.create("/api/v1/handker/" + newInstance.getId()))
+                .body("Instance created successfully");
+    }
+
+    @GetMapping("/updateInstance/{id}/{var}/{value}")
+    public void updateInstance(@PathVariable Integer id, @PathVariable String var, @PathVariable String value){
+        caveHandlerService.update(id,var,value);
+    }
 
     /***********************************************************
      *

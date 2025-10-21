@@ -24,9 +24,4 @@ public interface CaveStockRepo extends JpaRepository<CaveStock, Integer>{
 
     List<CaveStock> findByPriceBetween(Double price, Double price2);
 
-    /*
-     *
-     *  Delete
-     *
-     * */
 }
