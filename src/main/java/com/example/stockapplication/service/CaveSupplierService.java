@@ -19,7 +19,7 @@ public class CaveSupplierService {
         return cavesupplierRepo.findAll();
     }
 
-    public List<CaveSupplier> getCaveSupplierByid(Integer id) {
+    public List<CaveSupplier> getCaveSupplierByid(int id) {
         return cavesupplierRepo.getCaveSupplierByid(id);
     }
 }
