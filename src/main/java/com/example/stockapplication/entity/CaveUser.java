@@ -26,6 +26,4 @@ public class CaveUser {
     private String role;
     private String address;
     private String phone_number;
-
-
 }

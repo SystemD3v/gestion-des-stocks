@@ -1,15 +1,14 @@
 package com.example.stockapplication.service;
 
-import com.example.stockapplication.DTO.UserSummary;
 import com.example.stockapplication.entity.CaveUser;
 import com.example.stockapplication.repository.CaveUserRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import com.example.stockapplication.dto.UserSummary;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -34,11 +33,14 @@ public class CaveUserService {
                 .collect(Collectors.toList());
     }
 
-   public CaveUser deleteCaveUserById(Integer id) {
-        return caveuserRepo.deleteCaveUserById(id);
-   }
+    public void deleteById(Integer id) {
+
+    }
+
 
     public CaveUser createCaveUser(CaveUser caveUser) {
         return caveuserRepo.save(caveUser);
     }
+
+
 }
