@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.javafx.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="104.0" style="-fx-background-color: AAAAAA;">
+         <children>
+            <Text layoutX="24.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STOCKVIN" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="-2.0" layoutY="53.0" stroke="BLACK" strokeType="INSIDE" width="104.0" />
+            <Button layoutX="-1.0" layoutY="84.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="DASHBOARD" />
+            <Button layoutX="-1.0" layoutY="130.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="COMMANDES" />
+            <Button layoutY="175.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="CLIENT" />
+            <Button layoutY="222.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="FOURNISSEUR" />
+            <Button layoutX="1.0" layoutY="264.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="STATISTIQUES" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
