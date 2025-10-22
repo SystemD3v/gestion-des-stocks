@@ -10,6 +10,8 @@ module com.example.javafx {
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;
-    exports Controller;
-    opens Controller to javafx.fxml;
+    exports com.example.javafx.Controller;
+    opens com.example.javafx.Controller to javafx.fxml;
+    exports com.example.javafx.view;
+    opens com.example.javafx.view to javafx.fxml;
 }

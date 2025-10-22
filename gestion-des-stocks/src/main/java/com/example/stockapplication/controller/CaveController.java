@@ -188,7 +188,6 @@ public class CaveController {
      *
      **********************************************************/
 
-
     @GetMapping("/get_user_by_lastname/{lastname}")
     public ResponseEntity<List<UserSummary>> getUserByLastname(@PathVariable String lastname) {
         return ResponseEntity.ok(caveuserService.getUserByLastname(lastname));
