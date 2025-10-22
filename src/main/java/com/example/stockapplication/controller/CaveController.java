@@ -176,13 +176,27 @@ public class CaveController {
     }
 
     @GetMapping("/get_supplier/{id}")
-    public ResponseEntity<List<CaveSupplier>> getCaveSupplierByid(@PathVariable int id) {
+    public ResponseEntity<Optional<CaveSupplier>> getCaveSupplierByid(@PathVariable int id) {
         return ResponseEntity.ok(cavesupplierService.getCaveSupplierByid(id));
     }
 
-    @GetMapping("/edit/{id}/{name}/{phone}/{address}")
-    public ResponseEntity<Boolean> updateSupplierById(@PathVariable int id, @PathVariable String name, @PathVariable String phone, @PathVariable String address) {
-        return ResponseEntity.ok(cavesupplierService.updateSupplier(id, name, phone, address));
+    @GetMapping("/edit_supplier/{id}/{name}/{phone}/{address}")
+    public void updateSupplierById(@PathVariable int id, @PathVariable String name, @PathVariable int phone, @PathVariable String address) {
+        cavesupplierService.updatesupplier(id, name, phone, address);
     }
+
+    @PostMapping("/create_supplier")
+    public ResponseEntity<String> createSupp(@RequestBody CaveSupplier caveSupplier) {
+        CaveSupplier createdSupp = cavesupplierService.createSupp(caveSupplier);
+        return ResponseEntity
+                .created(URI.create("/api/v1/users/" + createdSupp.getId()))
+                .body("User created successfully");
+    }
+    @DeleteMapping("/sup_supplier/{id}")          //<---        TO DO LATER IF THERE'S TIME DONT TRY FOR NOW!!!!
+    public String deleteById(@PathVariable int id) {
+        cavesupplierService.deleteById(id);
+        return "deleted";
+    }
+
 
 }
