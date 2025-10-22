@@ -7,6 +7,7 @@ module com.example.javafx {
     requires org.kordamp.ikonli.javafx;
     requires eu.hansolo.tilesfx;
     requires java.desktop;
+    requires javafx.graphics;
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;
