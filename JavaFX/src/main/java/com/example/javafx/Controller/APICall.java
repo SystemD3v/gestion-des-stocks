@@ -13,7 +13,7 @@ import java.net.http.HttpResponse;
 import java.util.List;
 
 
-public class Controller {
+public class APICall {
 
     public static List<Model.stock> retrieveStock(String apiURL) throws Exception{
 
@@ -48,13 +48,13 @@ public class Controller {
         return gson.fromJson(response, listType);
     }
 
-    public List<Model.instance> retrieveInstance(String apiURL) throws Exception{
+    public static List<Model.Instance> retrieveInstance(String apiURL) throws Exception{
 
         String response = apiConnection(apiURL);
         response = checkBracket(response);
 
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Model.instance>>(){}.getType();
+        Type listType = new TypeToken<List<Model.Instance>>(){}.getType();
 
         return gson.fromJson(response, listType);
     }

@@ -1,7 +1,12 @@
 package com.example.javafx.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 public class Model {
 
+    @Getter
+    @AllArgsConstructor
     public class stock{
         public int id;
         public String label;
@@ -13,7 +18,9 @@ public class Model {
         public int supplier_id;
     }
 
-    public class instance{
+    @Getter
+    @AllArgsConstructor
+    public class Instance{
         public Integer id;
         public Integer supplyGroupId;
         public Integer requestAmount;
@@ -26,6 +33,8 @@ public class Model {
         public Integer userId;
     }
 
+    @Getter
+    @AllArgsConstructor
     public class supplier{
         public Integer id;
         public String supplier_name;
@@ -33,12 +42,16 @@ public class Model {
         public Integer supplier_phone;
     }
 
+    @Getter
+    @AllArgsConstructor
     public class log{
         public Integer logId;
         public String operation;
         public String description;
     }
 
+    @Getter
+    @AllArgsConstructor
     public class user{
         public Integer id;
         public String lastname;
