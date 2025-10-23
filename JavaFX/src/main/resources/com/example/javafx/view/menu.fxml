@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxWidth="140.0" minHeight="720.0" minWidth="140.0" prefHeight="720.0" prefWidth="140.0" style="-fx-background-color: #1E152A;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-
-    <children>
-        <Button fx:id="ButtonDashboard" layoutX="24.0" layoutY="116.0" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="DashBoard" textFill="#ededed">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-        <Button fx:id="ButtonCommande" layoutX="22.0" layoutY="187.0" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Commande" textFill="#ededed">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-        <Button fx:id="ButtonClient" layoutX="40.0" layoutY="259.0" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Client" textFill="#ededed">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-        <Button fx:id="ButtonFournisseur" layoutX="21.0" layoutY="321.0" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Fournisseur" textFill="#ededed">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-        <Button fx:id="ButtonStatistique" layoutX="21.0" layoutY="380.0" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Statistiques" textFill="#ededed">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-        <Line endX="71.0" layoutX="68.0" layoutY="67.0" startX="-68.0" stroke="WHITE" />
-        <Label layoutX="31.0" layoutY="22.0" text="StockVin" textFill="WHITE">
-            <font><Font size="20.0" /></font>
-        </Label>
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="140.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="140.0" style="-fx-background-color: #1E152A;">
+         <children>
+            <Button cache="true" contentDisplay="CENTER" layoutX="20.0" layoutY="116.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="DashBoard" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button cache="true" contentDisplay="CENTER" layoutX="21.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Commande" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button cache="true" contentDisplay="CENTER" layoutX="37.0" layoutY="257.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Client" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button cache="true" contentDisplay="CENTER" layoutX="20.0" layoutY="321.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Fournisseur" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button cache="true" contentDisplay="CENTER" layoutX="21.0" layoutY="380.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Statistiques" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Line endX="71.0" layoutX="68.0" layoutY="67.0" startX="-68.0" stroke="WHITE" />
+            <Label layoutX="31.0" layoutY="22.0" text="StockVin" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
 </AnchorPane>

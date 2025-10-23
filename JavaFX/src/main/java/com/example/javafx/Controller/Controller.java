@@ -1,31 +1,95 @@
-package com.example.javafx;
+package com.example.javafx.Controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.chart.PieChart;
-import netscape.javascript.JSObject;
+import com.example.javafx.model.Model;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.ResourceBundle;
-
-public class Controller implements Initializable {
-
-    @FXML
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.List;
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        int ouais = 5;
-        ObservableList<PieChart.Data> data = FXCollections.observableArrayList(
-                new PieChart.Data("En stock", ouais),
-                new PieChart.Data("Réservé", 25),
-                new PieChart.Data("Rupture", 15)
-        );
+public class Controller {
 
+    public static List<Model.stock> retrieveStock(String apiURL) throws Exception{
+
+        String response = apiConnection(apiURL);
+        response = checkBracket(response);
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Model.stock>>(){}.getType();
+
+        return gson.fromJson(response, listType);
+    }
+
+    public static List<Model.supplier> retrieveSupplier(String apiURL) throws Exception{
+
+        String response = apiConnection(apiURL);
+        response = checkBracket(response);
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Model.supplier>>(){}.getType();
+
+        return gson.fromJson(response, listType);
+    }
+
+    public List<Model.user> retrieveUser(String apiURL) throws Exception{
+
+        String response = apiConnection(apiURL);
+        response = checkBracket(response);
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Model.user>>(){}.getType();
+
+        return gson.fromJson(response, listType);
+    }
+
+    public List<Model.instance> retrieveInstance(String apiURL) throws Exception{
+
+        String response = apiConnection(apiURL);
+        response = checkBracket(response);
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Model.instance>>(){}.getType();
+
+        return gson.fromJson(response, listType);
+    }
+
+    public List<Model.log> retrieveLog(String apiURL) throws Exception{
+
+        String response = apiConnection(apiURL);
+        response = checkBracket(response);
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Model.log>>(){}.getType();
+
+        return gson.fromJson(response, listType);
+    }
+
+
+    private static String apiConnection(String apiURL) throws IOException, InterruptedException {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/v1/" + apiURL)).build();
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
+
+    private static String checkBracket(String str){
+        char[] chars = str.toCharArray();
+        if (chars.length > 0 && chars[0] == '[' && chars[chars.length-1] == ']') {
+            return str;
+        }
+        else{
+            str = "[" + str + "]";
+            return str;
+        }
 
     }
 }
