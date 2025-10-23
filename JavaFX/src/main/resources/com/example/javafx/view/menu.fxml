@@ -6,56 +6,38 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="140.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane prefHeight="800.0" prefWidth="140.0" style="-fx-background-color: #1E152A;">
-         <children>
-            <Button cache="true" contentDisplay="CENTER" layoutX="20.0" layoutY="116.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="DashBoard" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
-               <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
-               </cursor>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button cache="true" contentDisplay="CENTER" layoutX="21.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Commande" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
-               <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
-               </cursor>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button cache="true" contentDisplay="CENTER" layoutX="37.0" layoutY="257.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Client" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
-               <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
-               </cursor>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button cache="true" contentDisplay="CENTER" layoutX="20.0" layoutY="321.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Fournisseur" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
-               <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
-               </cursor>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button cache="true" contentDisplay="CENTER" layoutX="21.0" layoutY="380.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 12;" text="Statistiques" textAlignment="CENTER" textFill="#ededed" textOverrun="CENTER_WORD_ELLIPSIS">
-               <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
-               </cursor>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Line endX="71.0" layoutX="68.0" layoutY="67.0" startX="-68.0" stroke="WHITE" />
-            <Label layoutX="31.0" layoutY="22.0" text="StockVin" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-         </children></AnchorPane>
-   </children>
+<AnchorPane fx:controller="com.example.javafx.Controller.HomeScreenController"
+            prefHeight="720.0" prefWidth="140.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane prefHeight="800.0" prefWidth="140.0" style="-fx-background-color: #1E152A;">
+            <children>
+                <Label layoutX="31.0" layoutY="22.0" text="StockVin" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Line endX="71.0" layoutX="68.0" layoutY="67.0" startX="-68.0" stroke="WHITE" />
+
+                <Button text="DashBoard" layoutX="20" layoutY="116"
+                        onAction="#goToDashBoard"
+                        styleClass="sidebar-button" />
+
+                <Button text="Commande" layoutX="21" layoutY="187"
+                        onAction="#goToCommande"
+                        styleClass="sidebar-button" />
+
+                <Button text="Client" layoutX="37" layoutY="257"
+                        styleClass="sidebar-button" />
+
+                <Button text="Fournisseur" layoutX="20" layoutY="321"
+                        styleClass="sidebar-button" />
+
+                <Button text="Statistiques" layoutX="21" layoutY="380"
+                        styleClass="sidebar-button" />
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
+

@@ -44,7 +44,6 @@ dependencies {
         exclude(group = "org.openjfx")
     }
     implementation("com.google.code.gson:gson:2.11.0")
-
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
