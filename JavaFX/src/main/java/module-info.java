@@ -8,6 +8,8 @@ module com.example.javafx {
     requires eu.hansolo.tilesfx;
     requires java.desktop;
     requires javafx.graphics;
+    requires java.net.http;
+    requires com.google.gson;
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;
