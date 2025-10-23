@@ -10,6 +10,7 @@ module com.example.javafx {
     requires javafx.graphics;
     requires java.net.http;
     requires com.google.gson;
+    requires static lombok;
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;

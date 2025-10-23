@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Launcher">
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Controller.CommandesController">
     <left>
         <fx:include fx:id="sidebar" source="menu.fxml" />
     </left>
@@ -18,13 +18,13 @@
             </Label>
             <Label layoutX="63.0" layoutY="174.0" text="Commande à valider" />
             <Label layoutX="63.0" layoutY="455.0" text="Chercher des commandes" />
-            <TableView layoutX="63.0" layoutY="201.0" prefHeight="241.0" prefWidth="1202.0">
+            <TableView layoutX="63.0" layoutY="201.0" prefHeight="241.0" prefWidth="1202.0" fx:id="tableCommandes">
               <columns>
-                <TableColumn prefWidth="143.20001220703125" text="ID" />
-                <TableColumn prefWidth="485.5999755859375" text="PRODUITS" />
-                  <TableColumn prefWidth="160.39996337890625" text="SUPPLIER" />
-                  <TableColumn prefWidth="187.60003662109375" text="STATUS" />
-                  <TableColumn prefWidth="228.79998779296875" text="DATE" />
+                <TableColumn fx:id="idColumn" prefWidth="143.20001220703125" text="ID" />
+                <TableColumn fx:id="stockidColumn" prefWidth="485.5999755859375" text="PRODUITS" />
+                  <TableColumn fx:id="supplieridColumn" prefWidth="160.39996337890625" text="SUPPLIER" />
+                  <TableColumn fx:id="completeColumn" prefWidth="187.60003662109375" text="STATUS" />
+                  <TableColumn fx:id="timestampColumn" prefWidth="228.79998779296875" text="DATE" />
               </columns>
             </TableView>
             <TableView layoutX="63.0" layoutY="485.0" prefHeight="212.0" prefWidth="1202.0">
