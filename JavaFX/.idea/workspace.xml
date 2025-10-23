@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db80adc5-6acb-42a4-9ad0-8246ae89501c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/HomeScreenController.java" afterDir="false" />
+    <list default="true" id="db80adc5-6acb-42a4-9ad0-8246ae89501c" name="Changes" comment="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/DashBoard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/CommandesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/view/Commandes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/view/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commande.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/view/Commandes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/view/Commandes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commandes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/tmp/compileJava/compileTransaction/stash-dir/CaveController.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/build/tmp/compileJava/compileTransaction/stash-dir/CaveController.class.uniqueId0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/controller/CaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/controller/CaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commande.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,35 +67,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build JavaFX.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.JavaFX [:com.example.javafx.Launcher.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.JavaFX [run].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/commandes&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Launcher.executor": "Run",
+    "Gradle.Build JavaFX.executor": "Run",
+    "Gradle.JavaFX [:com.example.javafx.Launcher.main()].executor": "Run",
+    "Gradle.JavaFX [run].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "dev-back",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\meyns\Desktop\yo\dev\cours\java\gestion-des-stocks\JavaFX\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="Gradle.JavaFX [run]">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.javafx.Launcher" />
       <module name="JavaFX.main" />
@@ -152,9 +137,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.Launcher" />
         <item itemvalue="Gradle.JavaFX [run]" />
+        <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.Launcher" />
       </list>
     </recent_temporary>
   </component>
@@ -175,6 +160,15 @@
       <updated>1761204489974</updated>
       <workItem from="1761204492525" duration="8394000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
+      <option name="closed" value="true" />
+      <created>1761226154482</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761226154482</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

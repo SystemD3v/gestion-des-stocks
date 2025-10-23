@@ -55,7 +55,7 @@ public class Launcher extends Application {
 
     public enum Screen {
         HOME("/com/example/javafx/view/DashBoard.fxml"),
-        COMMANDE("/com/example/javafx/view/Commande.fxml");
+        COMMANDE("/com/example/javafx/view/Commandes.fxml");
 
         private final String fxmlPath;
 
