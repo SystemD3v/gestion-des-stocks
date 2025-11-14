@@ -16,6 +16,7 @@ public class Model {
         public int available_quantity;
         public double price;
         public int supplier_id;
+        public String supplier_name;
     }
 
     @Getter
