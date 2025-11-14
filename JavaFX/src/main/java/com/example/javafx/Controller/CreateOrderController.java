@@ -38,6 +38,8 @@ public class CreateOrderController {
     private BorderPane mainBorderPane;
     private AnchorPane originalCenterPane;
 
+    private CommandesController commandesController;
+
     private List<Instance> instanceList = new ArrayList<>();
 
     public void setMainBorderPane(BorderPane mainBorderPane, AnchorPane originalCenterPane) {
@@ -205,6 +207,7 @@ public class CreateOrderController {
         // Retour vers commandes
         backButton.setOnAction(event -> {
             if (mainBorderPane != null && originalCenterPane != null) {
+                commandesController.refreshTables();
                 mainBorderPane.setCenter(originalCenterPane);
             }
         });

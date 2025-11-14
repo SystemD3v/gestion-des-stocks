@@ -35,6 +35,19 @@ public class CommandesController {
     @FXML private AnchorPane centerPane;
     @FXML private Button createOrderButton;
 
+    public void refreshTables(){
+        tableCommandes.refresh();
+        tableCommandes2.refresh();
+    }
+
+    private void modifyStock(String str, Integer amount ) throws Exception {
+
+        List<Model.stock> stocks = APICall.retrieveStock("get_stockById/" + str);
+        if (stocks != null && !stocks.isEmpty() && stocks.get(0).label != null) {
+            APICall.updateOrder("updateStock", Integer.valueOf(str),"available_quantity", String.valueOf((stocks.get(0).available_quantity - amount)));
+        }
+    }
+
     private void addNames(List<Instance> iList) throws Exception {
         for(Instance i : iList){
             if (i.stockId != null) {
@@ -188,6 +201,7 @@ public class CommandesController {
 
             // Appel API :
             APICall.updateOrder("updateInstance", selected.getId(),"completed","true");
+            modifyStock(selected.stockId, selected.requestAmount);
 
             tableCommandes.refresh();
             tableCommandes2.refresh();

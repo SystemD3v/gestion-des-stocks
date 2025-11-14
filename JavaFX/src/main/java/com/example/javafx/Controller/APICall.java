@@ -4,6 +4,7 @@ import com.example.javafx.model.Model;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -42,7 +43,7 @@ public class APICall {
     }
     public static List<Model.supplier> retrieveSupplierById(String apiURL,String id) throws Exception{
 
-        String response = apiConnection(apiURL+id);
+        String response = apiConnectionGet(apiURL+id);
         response = checkBracket(response);
 
         Gson gson = new Gson();
@@ -51,7 +52,7 @@ public class APICall {
         return gson.fromJson(response, listType);
     }
     public static void editSupplier(String apiURL,String id , String name, String phone, String address) throws Exception {
-        apiConnection(apiURL+id+"/"+name+"/"+phone+"/"+address);
+        apiConnectionGet(apiURL+id+"/"+name+"/"+phone+"/"+address);
     }
     public static void createSupplier(String apiURL, String name, String phone, String address) throws Exception {
         String jsonInputString = String.format(
@@ -178,16 +179,6 @@ public class APICall {
 
         return response.body();
     }
-    private static String apiConnectionDelete(String apiURL) throws IOException, InterruptedException {
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/api/v1/" + apiURL)).DELETE().build();
-        HttpResponse<String> response = HttpClient.newHttpClient()
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        return response.body();
-    }
-
 
     private static String apiConnectionDelete(String apiURL) throws Exception{
 
