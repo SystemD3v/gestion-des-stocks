@@ -3,6 +3,7 @@ package com.example.stockapplication.controller;
 import com.example.stockapplication.entity.*;
 import com.example.stockapplication.service.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -162,6 +163,11 @@ public class CaveController {
         return ResponseEntity.ok(caveHandlerService.findByCompleted(bool));
     }
 
+    @GetMapping("/getLastInstance")
+    public ResponseEntity<List<CaveHandler>> getLastHandler() {
+        return ResponseEntity.ok(caveHandlerService.getLastHandler());
+    }
+
     @DeleteMapping("/deleteInstance/{id}")
     public String deleteInstanceById(@PathVariable Integer id){
         caveHandlerService.deleteHandlerById(id);
@@ -173,7 +179,7 @@ public class CaveController {
     public ResponseEntity<String> createInstance(@RequestBody CaveHandler caveHandler) {
         CaveHandler newInstance = caveHandlerService.createInstance(caveHandler);
         return ResponseEntity
-                .created(URI.create("/api/v1/handker/" + newInstance.getId()))
+                .created(URI.create("/api/v1/handler/" + newInstance.getId()))
                 .body("Instance created successfully");
     }
 
@@ -191,6 +197,11 @@ public class CaveController {
     @GetMapping("/get_user_by_lastname/{lastname}")
     public ResponseEntity<List<UserSummary>> getUserByLastname(@PathVariable String lastname) {
         return ResponseEntity.ok(caveuserService.getUserByLastname(lastname));
+    }
+
+    @GetMapping("/get_user_by_id/{id}")
+    public ResponseEntity<List<CaveUser>> getUserById(@PathVariable Integer id){
+        return ResponseEntity.ok(caveuserService.getUserById(id));
     }
 
     @GetMapping("/get_users")
@@ -251,5 +262,8 @@ public class CaveController {
         return "deleted";
     }
 
-
+    @GetMapping("/test")
+    public String test(){
+        return "test";
+    }
 }

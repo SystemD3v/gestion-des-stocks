@@ -10,4 +10,9 @@ import java.util.List;
 public interface CaveUserRepo extends JpaRepository<CaveUser, Integer> {
 
     List<CaveUser> findAllByLastname(String lastname);
+
+    List<CaveUser> findCaveUserById(Integer id);
+
+    @Override
+    void deleteById(Integer id);
 }

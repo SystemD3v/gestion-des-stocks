@@ -47,6 +47,10 @@ public class CaveHandlerService {
         return caveHandlerRepo.findByStockId(stockId);
     }
 
+    public List<CaveHandler> getLastHandler() {
+        return caveHandlerRepo.findTopByOrderByIdDesc();
+    }
+
     public void deleteHandlerById(Integer id){
         caveHandlerRepo.deleteById(id);
     }

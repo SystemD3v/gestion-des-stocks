@@ -20,5 +20,6 @@ public interface CaveHandlerRepo extends JpaRepository<CaveHandler, Integer>{
 
     List<CaveHandler> findByStockId(Integer stockId);
 
+    List<CaveHandler> findTopByOrderByIdDesc();
 
 }

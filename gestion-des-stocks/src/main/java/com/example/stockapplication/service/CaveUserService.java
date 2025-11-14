@@ -21,6 +21,8 @@ public class CaveUserService {
         return caveuserRepo.findAll();
     }
 
+    public List<CaveUser> getUserById(Integer id) {return caveuserRepo.findCaveUserById(id);}
+
     public List<UserSummary> getUserByLastname(String lastname) {
         return caveuserRepo.findAllByLastname(lastname)
                 .stream()
@@ -35,7 +37,7 @@ public class CaveUserService {
     }
 
     public void deleteById(Integer id) {
-
+        caveuserRepo.deleteById(id);
     }
 
     public void updateUser(Integer id, String var, String value){
