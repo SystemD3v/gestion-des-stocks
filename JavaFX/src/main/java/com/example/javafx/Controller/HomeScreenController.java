@@ -19,8 +19,14 @@ public class HomeScreenController {
 
     @FXML
     private void goToCommande() {
+        System.out.println("going to commande");
         Launcher.getInstance().switchScreen(Launcher.Screen.COMMANDE);
     }
+    @FXML
+    private void goToDashFournisseur() {
+        Launcher.getInstance().switchScreen(Launcher.Screen.FOURNISSUER);
+    }
+
     @FXML
     private void goToDashBoard() {
         Launcher.getInstance().switchScreen(Launcher.Screen.HOME);

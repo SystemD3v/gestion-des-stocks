@@ -33,6 +33,7 @@
                         styleClass="sidebar-button" />
 
                 <Button text="Fournisseur" layoutX="20" layoutY="321"
+                        onAction="#goToDashFournisseur"
                         styleClass="sidebar-button" />
 
                 <Button text="Statistiques" layoutX="21" layoutY="380"
