@@ -7,7 +7,7 @@ public class Model {
 
     @Getter
     @AllArgsConstructor
-    public class stock{
+    public static class stock{
         public int id;
         public String label;
         public int years;
@@ -16,6 +16,7 @@ public class Model {
         public int available_quantity;
         public double price;
         public int supplier_id;
+        public String supplier_name;
     }
 
     @Getter
@@ -31,6 +32,7 @@ public class Model {
         public Integer stockId;
         public Integer supplierId;
         public Integer userId;
+
     }
 
     @Getter
