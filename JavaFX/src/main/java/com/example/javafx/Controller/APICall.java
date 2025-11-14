@@ -75,7 +75,7 @@ public class APICall {
 
 
 
-    public List<Model.user> retrieveUser(String apiURL) throws Exception{
+    public static List<Model.user> retrieveUser(String apiURL) throws Exception{
 
         String response = apiConnectionGet(apiURL);
         response = checkBracket(response);
