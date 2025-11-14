@@ -4,7 +4,6 @@ import com.example.javafx.model.Model;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -17,7 +16,7 @@ public class APICall {
 
     public static List<Model.stock> retrieveStock(String apiURL) throws Exception{
 
-        String response = apiConnection(apiURL);
+        String response = apiConnectionGet(apiURL);
         response = checkBracket(response);
 
         Gson gson = new Gson();
@@ -28,7 +27,7 @@ public class APICall {
 
     public static List<Model.supplier> retrieveSupplier(String apiURL) throws Exception{
 
-        String response = apiConnection(apiURL);
+        String response = apiConnectionGet(apiURL);
         response = checkBracket(response);
 
         Gson gson = new Gson();
@@ -37,9 +36,10 @@ public class APICall {
         return gson.fromJson(response, listType);
     }
 
+
     public List<Model.user> retrieveUser(String apiURL) throws Exception{
 
-        String response = apiConnection(apiURL);
+        String response = apiConnectionGet(apiURL);
         response = checkBracket(response);
 
         Gson gson = new Gson();
@@ -50,7 +50,7 @@ public class APICall {
 
     public static List<Model.Instance> retrieveInstance(String apiURL) throws Exception{
 
-        String response = apiConnection(apiURL);
+        String response = apiConnectionGet(apiURL);
         response = checkBracket(response);
 
         Gson gson = new Gson();
@@ -61,7 +61,7 @@ public class APICall {
 
     public List<Model.log> retrieveLog(String apiURL) throws Exception{
 
-        String response = apiConnection(apiURL);
+        String response = apiConnectionGet(apiURL);
         response = checkBracket(response);
 
         Gson gson = new Gson();
@@ -70,11 +70,84 @@ public class APICall {
         return gson.fromJson(response, listType);
     }
 
+    public static String delete(String apiURL, Integer id) throws Exception {
+       return apiConnectionDelete(apiURL+id);
+    }
 
-    private static String apiConnection(String apiURL) throws IOException, InterruptedException {
+    public static void updateOrder(String apiURL, Integer id, String var, String value) throws Exception {
+        apiConnectionGet(apiURL+ "/" + id + "/" + var + "/" + value );
+    }
+
+    public void createInstance(List<Model.Instance> list) throws Exception {
+        Integer groupId = 0;
+       List<Model.Instance> listGroupId = retrieveInstance("getLastInstance");
+       for(Model.Instance i : listGroupId){
+           System.out.println(i.supplyGroupId);
+           groupId = i.supplyGroupId + 1;
+       }
+
+       long timestamp = System.currentTimeMillis();
+
+       for(Model.Instance i : list){
+           if(i.supplierId != null){
+                i.operation = 1;
+           }else{
+               i.operation = 2;
+           }
+           String body = String.format("""
+                {
+                "supplyGroupId":%s,
+                "requestAmount":%d,
+                "operation":%d,
+                "validated":false,
+                "completed":false,
+                "orderTimestamp":"%d",
+                "stockId":%s,
+                "supplierId":%s,
+                "userId":%d
+                }
+                """,
+                   groupId,
+                   i.requestAmount,
+                   i.operation,
+                   timestamp,
+                   i.stockId,
+                   i.supplierId,
+                   i.userId);
+            System.out.println(body);
+           System.out.println(apiConnectionPost("createInstance", body));
+       }
+
+    }
+
+    private static String apiConnectionPost(String apiURL, String body) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/v1/" + apiURL))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(body))
+                .build();
+
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
+
+    private static String apiConnectionGet(String apiURL) throws Exception{
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/api/v1/" + apiURL)).build();
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
+
+    private static String apiConnectionDelete(String apiURL) throws Exception{
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/v1/" + apiURL))
+                .DELETE().build();
         HttpResponse<String> response = HttpClient.newHttpClient()
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -90,6 +163,5 @@ public class APICall {
             str = "[" + str + "]";
             return str;
         }
-
     }
 }

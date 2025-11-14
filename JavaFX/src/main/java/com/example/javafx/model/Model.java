@@ -7,7 +7,7 @@ public class Model {
 
     @Getter
     @AllArgsConstructor
-    public class stock{
+    public static class stock{
         public int id;
         public String label;
         public int years;
@@ -20,22 +20,29 @@ public class Model {
 
     @Getter
     @AllArgsConstructor
-    public class Instance{
+    public static class Instance{
+
         public Integer id;
         public Integer supplyGroupId;
         public Integer requestAmount;
         public Integer operation;
         public boolean validated;
-        public boolean completed;
+        public String completed;
         public String orderTimestamp;
-        public Integer stockId;
-        public Integer supplierId;
+        public String stockId;
+        public String supplierId;
         public Integer userId;
+        public String stockName;
+        public String supplierName;
+
+        public Instance() {
+
+        }
     }
 
     @Getter
     @AllArgsConstructor
-    public class supplier{
+    public static class supplier{
         public Integer id;
         public String supplier_name;
         public String supplier_address;
@@ -44,7 +51,7 @@ public class Model {
 
     @Getter
     @AllArgsConstructor
-    public class log{
+    public static class log{
         public Integer logId;
         public String operation;
         public String description;
@@ -52,7 +59,7 @@ public class Model {
 
     @Getter
     @AllArgsConstructor
-    public class user{
+    public static class user{
         public Integer id;
         public String lastname;
         public String firstname;

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafx.Controller.CreateOrderController">
+
+    <left>
+        <fx:include fx:id="sidebar" source="menu.fxml" />
+    </left>
+
+    <center>
+        <VBox spacing="20">
+            <padding>
+                <Insets top="30" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <!-- En-tête avec titre et bouton retour -->
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Nouvelle commande">
+                    <font>
+                        <Font size="30"/>
+                    </font>
+                </Label>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="backButton" text="Retour"/>
+            </HBox>
+
+            <!-- Contenu principal en deux colonnes -->
+            <HBox spacing="40" VBox.vgrow="ALWAYS">
+
+                <!-- Colonne gauche : Formulaire -->
+                <VBox spacing="20" prefWidth="350">
+
+                    <!-- Produit -->
+                    <VBox spacing="5">
+                        <Label text="Produit :"/>
+                        <ComboBox fx:id="productComboBox" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <!-- Montant -->
+                    <VBox spacing="5">
+                        <Label text="Montant :"/>
+                        <TextField fx:id="amountField" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <!-- Client -->
+                    <VBox spacing="5">
+                        <Label text="Client :"/>
+                        <ComboBox fx:id="clientComboBox" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <Region VBox.vgrow="ALWAYS"/>
+
+                    <!-- Boutons d'action -->
+                    <HBox spacing="10">
+                        <Button fx:id="addProductButton" text="Ajouter produit" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <Button fx:id="finalizeButton" text="Finaliser commande" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    </HBox>
+
+                </VBox>
+
+                <!-- Colonne droite : Liste des produits -->
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <Label text="Produits ajoutés :"/>
+                    <ListView fx:id="addedProductsListView" VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

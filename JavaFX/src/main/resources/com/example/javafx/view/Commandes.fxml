@@ -4,36 +4,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Controller.CommandesController">
-    <left>
-        <fx:include fx:id="sidebar" source="menu.fxml" />
-    </left>
-   <center>
-      <AnchorPane prefHeight="720.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="560.0" prefHeight="64.0" prefWidth="250.0" text="Commandes">
-               <font>
-                  <Font size="45.0" />
-               </font>
-            </Label>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafx.Controller.CommandesController"
+            fx:id="mainBorderPane">
+<left>
+    <fx:include fx:id="sidebar" source="menu.fxml" />
+</left>
+<center>
+    <AnchorPane fx:id="centerPane" prefWidth="1280" prefHeight="720">
+        <children>
+            <Label layoutX="560" layoutY="64" text="Commandes" style="-fx-font-size:45px;" />
+            <Button fx:id="createOrderButton" layoutX="950" layoutY="150" text="Créer commande" prefWidth="180" prefHeight="35" />
             <Label layoutX="63.0" layoutY="174.0" text="Commande à valider" />
             <Label layoutX="63.0" layoutY="455.0" text="Chercher des commandes" />
+
             <TableView layoutX="63.0" layoutY="201.0" prefHeight="241.0" prefWidth="1202.0" fx:id="tableCommandes">
-              <columns>
-                <TableColumn fx:id="idColumn" prefWidth="143.20001220703125" text="ID" />
-                <TableColumn fx:id="stockidColumn" prefWidth="485.5999755859375" text="PRODUITS" />
-                  <TableColumn fx:id="supplieridColumn" prefWidth="160.39996337890625" text="SUPPLIER" />
-                  <TableColumn fx:id="completeColumn" prefWidth="187.60003662109375" text="STATUS" />
-                  <TableColumn fx:id="timestampColumn" prefWidth="228.79998779296875" text="DATE" />
-              </columns>
+                <columns>
+                    <TableColumn fx:id="idColumn" prefWidth="143.2" text="ID" />
+                    <TableColumn fx:id="stockidColumn" prefWidth="485.6" text="PRODUITS" />
+                    <TableColumn fx:id="supplieridColumn" prefWidth="160.4" text="SUPPLIER" />
+                    <TableColumn fx:id="completeColumn" prefWidth="187.6" text="STATUS" />
+                    <TableColumn fx:id="timestampColumn" prefWidth="228.8" text="DATE" />
+                </columns>
             </TableView>
-            <TableView layoutX="63.0" layoutY="485.0" prefHeight="212.0" prefWidth="1202.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-               </columns>
+
+            <TableView layoutX="63.0" layoutY="485.0" prefHeight="212.0" prefWidth="1202.0" fx:id="tableCommandes2">
+                <columns>
+                    <TableColumn fx:id="idColumn2" prefWidth="143.2" text="ID" />
+                    <TableColumn fx:id="stockidColumn2" prefWidth="485.6" text="PRODUITS" />
+                    <TableColumn fx:id="supplieridColumn2" prefWidth="160.4" text="SUPPLIER" />
+                    <TableColumn fx:id="completeColumn2" prefWidth="187.6" text="STATUS" />
+                    <TableColumn fx:id="timestampColumn2" prefWidth="228.8" text="DATE" />
+                </columns>
             </TableView>
-         </children>
-      </AnchorPane>
-   </center>
+        </children>
+    </AnchorPane>
+</center>
 </BorderPane>
