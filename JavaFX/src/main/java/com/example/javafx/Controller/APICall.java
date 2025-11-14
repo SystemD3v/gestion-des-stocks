@@ -2,6 +2,7 @@ package com.example.javafx.Controller;
 
 import com.example.javafx.model.Model;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -91,5 +92,77 @@ public class APICall {
             return str;
         }
 
+    }
+    public static boolean addStock(Model.stock newStock) throws Exception {
+        String jsonBody = getString(newStock);
+
+        System.out.println("Envoi vers l'API : " + jsonBody);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/v1/createStock"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .build();
+
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("Réponse API : " + response.statusCode() + " - " + response.body());
+
+        return response.statusCode() == 200 || response.statusCode() == 201;
+    }
+    /**
+     * Supprime un stock via l'API
+     */
+    /**
+     * Met à jour la quantité d'un stock via l'API
+     */
+    public static boolean updateStockQuantity(int stockId, int newQuantity) throws Exception {
+        System.out.println("Mise à jour de la quantité du stock ID " + stockId + " : " + newQuantity);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/v1/updateStock/" + stockId + "/available_quantity/" + newQuantity))
+                .GET()
+                .build();
+
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("Réponse API : " + response.statusCode());
+
+        return response.statusCode() == 200;
+    }
+
+    /**
+     * Supprime un stock via l'API
+     */
+    public static boolean deleteStock(int stockId) throws Exception {
+        System.out.println("Suppression du stock ID " + stockId);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/v1/deleteStockById/" + stockId))
+                .DELETE()
+                .build();
+
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("Réponse API : " + response.statusCode() + " - " + response.body());
+
+        return response.statusCode() == 200;
+    }
+
+    private static String getString(Model.stock newStock) {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("label", newStock.label);
+        jsonObject.addProperty("years", newStock.years);
+        jsonObject.addProperty("genre", newStock.genre);
+        jsonObject.addProperty("area", newStock.area);
+        jsonObject.addProperty("available_quantity", newStock.available_quantity);
+        jsonObject.addProperty("price", newStock.price);
+        jsonObject.addProperty("supplier_id", newStock.supplier_id);
+
+        String jsonBody = jsonObject.toString();
+        return jsonBody;
     }
 }

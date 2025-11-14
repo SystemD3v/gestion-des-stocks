@@ -11,6 +11,7 @@ module com.example.javafx {
     requires java.net.http;
     requires com.google.gson;
     requires static lombok;
+    opens com.example.javafx.model to javafx.base, com.google.gson;
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;

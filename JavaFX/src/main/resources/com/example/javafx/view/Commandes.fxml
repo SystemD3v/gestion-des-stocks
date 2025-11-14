@@ -8,32 +8,32 @@
     <left>
         <fx:include fx:id="sidebar" source="menu.fxml" />
     </left>
-   <center>
-      <AnchorPane prefHeight="720.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="560.0" prefHeight="64.0" prefWidth="250.0" text="Commandes">
-               <font>
-                  <Font size="45.0" />
-               </font>
-            </Label>
-            <Label layoutX="63.0" layoutY="174.0" text="Commande à valider" />
-            <Label layoutX="63.0" layoutY="455.0" text="Chercher des commandes" />
-            <TableView layoutX="63.0" layoutY="201.0" prefHeight="241.0" prefWidth="1202.0" fx:id="tableCommandes">
-              <columns>
-                <TableColumn fx:id="idColumn" prefWidth="143.20001220703125" text="ID" />
-                <TableColumn fx:id="stockidColumn" prefWidth="485.5999755859375" text="PRODUITS" />
-                  <TableColumn fx:id="supplieridColumn" prefWidth="160.39996337890625" text="SUPPLIER" />
-                  <TableColumn fx:id="completeColumn" prefWidth="187.60003662109375" text="STATUS" />
-                  <TableColumn fx:id="timestampColumn" prefWidth="228.79998779296875" text="DATE" />
-              </columns>
-            </TableView>
-            <TableView layoutX="63.0" layoutY="485.0" prefHeight="212.0" prefWidth="1202.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-               </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-   </center>
+    <center>
+        <AnchorPane prefHeight="720.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="560.0" prefHeight="64.0" prefWidth="250.0" text="Commandes">
+                    <font>
+                        <Font size="45.0" />
+                    </font>
+                </Label>
+                <Label layoutX="63.0" layoutY="174.0" text="Commande à valider" />
+                <Label layoutX="63.0" layoutY="455.0" text="Chercher des commandes" />
+                <TableView layoutX="63.0" layoutY="201.0" prefHeight="241.0" prefWidth="1202.0" fx:id="tableCommandes">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="143.20001220703125" text="ID" />
+                        <TableColumn fx:id="stockidColumn" prefWidth="485.5999755859375" text="PRODUITS" />
+                        <TableColumn fx:id="supplieridColumn" prefWidth="160.39996337890625" text="SUPPLIER" />
+                        <TableColumn fx:id="completeColumn" prefWidth="187.60003662109375" text="STATUS" />
+                        <TableColumn fx:id="timestampColumn" prefWidth="228.79998779296875" text="DATE" />
+                    </columns>
+                </TableView>
+                <TableView layoutX="63.0" layoutY="485.0" prefHeight="212.0" prefWidth="1202.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </center>
 </BorderPane>

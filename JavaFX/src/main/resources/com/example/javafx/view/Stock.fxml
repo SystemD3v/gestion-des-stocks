@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafx.Controller.StockController"
+            style="-fx-background-color: #F5F5F7;">
+    <left>
+        <fx:include fx:id="sidebar" source="menu.fxml" />
+    </left>
+    <center>
+        <AnchorPane prefHeight="720.0" prefWidth="1140.0" BorderPane.alignment="CENTER">
+            <children>
+                <!-- Header Section -->
+                <HBox layoutX="30" layoutY="30" spacing="400" alignment="CENTER_LEFT">
+                    <VBox spacing="5">
+                        <Label text="Gestion du Stock"
+                               style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1E152A;"/>
+                        <Label fx:id="totalBottlesLabel" text="Chargement..."
+                               style="-fx-font-size: 14px; -fx-text-fill: #666666;"/>
+                    </VBox>
+
+                    <Button text="+ Ajouter un produit" onAction="#showAddProductDialog"
+                            style="-fx-background-color: #1E152A; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 24; -fx-background-radius: 8; -fx-cursor: hand;"/>
+                </HBox>
+
+                <!-- Search and Filter Bar -->
+                <HBox layoutX="30" layoutY="130" spacing="15" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchField" promptText="Rechercher un produit..."
+                               prefWidth="350"
+                               style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14px;"/>
+
+                    <ComboBox fx:id="categoryFilter" promptText="Categorie" prefWidth="150"
+                              style="-fx-background-color: white; -fx-background-radius: 8;"/>
+
+                    <ComboBox fx:id="stockStatusFilter" promptText="Statut stock" prefWidth="150"
+                              style="-fx-background-color: white; -fx-background-radius: 8;"/>
+
+                    <Button text="Reinitialiser" onAction="#resetFilters"
+                            style="-fx-background-color: white; -fx-text-fill: #666666; -fx-background-radius: 8; -fx-padding: 10 20; -fx-cursor: hand;"/>
+                </HBox>
+
+                <!-- Table Container -->
+                <VBox layoutX="30" layoutY="210" styleClass="dashboard-card" prefWidth="1080" prefHeight="380">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <TableView fx:id="tableStocks" prefHeight="340" style="-fx-background-color: transparent;">
+                        <columns>
+                            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="nameColumn" text="Produit" prefWidth="280"/>
+                            <TableColumn fx:id="categoryColumn" text="Catégorie" prefWidth="120"/>
+                            <TableColumn fx:id="yearColumn" text="Année" prefWidth="80"/>
+                            <TableColumn fx:id="supplierColumn" text="Fournisseur" prefWidth="80"/>
+                            <TableColumn fx:id="quantityColumn" text="Quantité" prefWidth="100"/>
+                            <TableColumn fx:id="priceColumn" text="Prix unitaire" prefWidth="120"/>
+                            <TableColumn fx:id="totalValueColumn" text="Valeur totale" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

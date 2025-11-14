@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db80adc5-6acb-42a4-9ad0-8246ae89501c" name="Changes" comment="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/DashBoard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/StockController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Stock.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/CommandesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/CommandesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commande.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/view/Commandes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/view/Commandes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commandes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commandes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/DashBoard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/tmp/compileJava/compileTransaction/stash-dir/CaveController.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/entity/CaveLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/entity/CaveLogs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +65,34 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\meyns\.gradle\wrapper\dists\gradle-8.14.3-bin\cv11ve7ro1n3o1j4so8xd9n66\gradle-8.14.3" javaHome="C:\Program Files\Eclipse Adoptium\jdk-21.0.7.6-hotspot" gradleVersion="8.14.3" />
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="$PROJECT_DIR$/../../../../../../../../../Program Files/php-8.4.3-nts-Win32-vs17-x64/php.exe" />
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LucasRaoul&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SystemD3v/gestion-des-stocks.git&quot;,
+    &quot;accountId&quot;: &quot;04399550-b81d-4a66-b19b-bd97252366bc&quot;
+  }
+}</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\lucas\.gradle\wrapper\dists\gradle-8.14.3-bin\cv11ve7ro1n3o1j4so8xd9n66\gradle-8.14.3" javaHome="C:\Program Files\Java\jdk-21" gradleVersion="8.14.3" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="$PROJECT_DIR$/../../../../../Program Files/php/php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -71,6 +105,7 @@
   "keyToString": {
     "Application.Launcher.executor": "Run",
     "Gradle.Build JavaFX.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "Gradle.JavaFX [:com.example.javafx.Launcher.main()].executor": "Run",
     "Gradle.JavaFX [run].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -82,6 +117,7 @@
     "git-widget-placeholder": "dev-back",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Lucas/Code/Java/VinStock/JavaFX",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -93,6 +129,9 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\meyns\Desktop\yo\dev\cours\java\gestion-des-stocks\JavaFX\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.javafx.Controller" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.JavaFX [run]">
@@ -159,6 +198,10 @@
       <option name="presentableId" value="Default" />
       <updated>1761204489974</updated>
       <workItem from="1761204492525" duration="8394000" />
+      <workItem from="1762859558003" duration="1633000" />
+      <workItem from="1763107054440" duration="15000" />
+      <workItem from="1763107094978" duration="1168000" />
+      <workItem from="1763108332812" duration="21708000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
       <option name="closed" value="true" />
@@ -180,6 +223,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
