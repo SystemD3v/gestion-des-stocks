@@ -37,7 +37,7 @@ public class APICall {
         return gson.fromJson(response, listType);
     }
 
-    public List<Model.user> retrieveUser(String apiURL) throws Exception{
+    public static List<Model.user> retrieveUser(String apiURL) throws Exception{
 
         String response = apiConnection(apiURL);
         response = checkBracket(response);
@@ -71,7 +71,7 @@ public class APICall {
     }
 
 
-    private static String apiConnection(String apiURL) throws IOException, InterruptedException {
+    public static String apiConnection(String apiURL) throws IOException, InterruptedException {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/api/v1/" + apiURL)).build();
@@ -90,6 +90,5 @@ public class APICall {
             str = "[" + str + "]";
             return str;
         }
-
     }
 }

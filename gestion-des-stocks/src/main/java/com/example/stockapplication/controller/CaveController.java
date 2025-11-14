@@ -173,7 +173,7 @@ public class CaveController {
     public ResponseEntity<String> createInstance(@RequestBody CaveHandler caveHandler) {
         CaveHandler newInstance = caveHandlerService.createInstance(caveHandler);
         return ResponseEntity
-                .created(URI.create("/api/v1/handker/" + newInstance.getId()))
+                .created(URI.create("/api/v1/handler/" + newInstance.getId()))
                 .body("Instance created successfully");
     }
 
@@ -202,6 +202,11 @@ public class CaveController {
     String deleteUser(@PathVariable Integer id) {
         caveuserService.deleteById(id);
         return "User bien delete : " + id ;
+    }
+
+    @GetMapping("/get_user_by_id/{id}")
+    public ResponseEntity<List<CaveUser>> getUserById(@PathVariable Integer id){
+        return ResponseEntity.ok(caveuserService.getUserById(id));
     }
 
     @PostMapping("/create_user")

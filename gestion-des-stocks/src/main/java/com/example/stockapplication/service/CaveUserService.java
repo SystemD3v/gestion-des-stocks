@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import com.example.stockapplication.dto.UserSummary;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,8 +35,11 @@ public class CaveUserService {
                 .collect(Collectors.toList());
     }
 
-    public void deleteById(Integer id) {
+    public List<CaveUser> getUserById(Integer id) {return caveuserRepo.findCaveUserById(id);}
 
+    @Transactional
+    public void deleteById(Integer id) {
+        caveuserRepo.deleteById(id);
     }
 
     public void updateUser(Integer id, String var, String value){
@@ -69,7 +73,6 @@ public class CaveUserService {
 
         caveuserRepo.save(caveUser);
     }
-
 
     public CaveUser createCaveUser(CaveUser caveUser) {
         return caveuserRepo.save(caveUser);

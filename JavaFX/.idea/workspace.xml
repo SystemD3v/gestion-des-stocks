@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db80adc5-6acb-42a4-9ad0-8246ae89501c" name="Changes" comment="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/DashBoard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/ClientsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/view/Clients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Clients.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/HomeScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/HomeScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commande.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commandes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commandes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/controller/CaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/controller/CaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/repository/CaveUserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/repository/CaveUserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/service/CaveUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/service/CaveUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +66,18 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\meyns\.gradle\wrapper\dists\gradle-8.14.3-bin\cv11ve7ro1n3o1j4so8xd9n66\gradle-8.14.3" javaHome="C:\Program Files\Eclipse Adoptium\jdk-21.0.7.6-hotspot" gradleVersion="8.14.3" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\lilia\.gradle\wrapper\dists\gradle-8.14.3-bin\cv11ve7ro1n3o1j4so8xd9n66\gradle-8.14.3" javaHome="C:\Users\lilia\.jdks\temurin-21.0.8" gradleVersion="8.14.3" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="$PROJECT_DIR$/../../../../../../../../../Program Files/php-8.4.3-nts-Win32-vs17-x64/php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -71,6 +91,7 @@
   "keyToString": {
     "Application.Launcher.executor": "Run",
     "Gradle.Build JavaFX.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "Gradle.JavaFX [:com.example.javafx.Launcher.main()].executor": "Run",
     "Gradle.JavaFX [run].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -159,6 +180,7 @@
       <option name="presentableId" value="Default" />
       <updated>1761204489974</updated>
       <workItem from="1761204492525" duration="8394000" />
+      <workItem from="1763108070646" duration="15721000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
       <option name="closed" value="true" />
@@ -180,6 +202,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

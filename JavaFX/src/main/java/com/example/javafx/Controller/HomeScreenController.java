@@ -26,5 +26,10 @@ public class HomeScreenController {
         Launcher.getInstance().switchScreen(Launcher.Screen.HOME);
     }
 
+    @FXML
+    private void goToClients() {
+        Launcher.getInstance().switchScreen(Launcher.Screen.CLIENTS);
+    }
+
 
 }

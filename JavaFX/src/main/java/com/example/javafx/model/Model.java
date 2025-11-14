@@ -52,7 +52,7 @@ public class Model {
 
     @Getter
     @AllArgsConstructor
-    public class user{
+    public static class user{
         public Integer id;
         public String lastname;
         public String firstname;

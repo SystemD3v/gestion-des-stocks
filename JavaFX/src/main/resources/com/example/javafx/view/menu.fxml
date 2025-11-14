@@ -29,6 +29,7 @@
                         styleClass="sidebar-button" />
 
                 <Button text="Client" layoutX="37" layoutY="257"
+                        onAction="#goToClients"
                         styleClass="sidebar-button" />
 
                 <Button text="Fournisseur" layoutX="20" layoutY="321"
