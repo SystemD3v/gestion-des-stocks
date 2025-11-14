@@ -54,9 +54,24 @@ public class StockController {
      */
     public void getSupplierName(List<stock> stocks) throws Exception {
         for(stock stock : stocks) {
-            // Appel API pour récupérer le fournisseur
-            List<supplier> suppliers = APICall.retrieveSupplier("get_supplier/" + stock.supplier_id);
-            stock.supplier_name = suppliers.get(0).supplier_name;
+            // Check if supplier_id exists
+            try {
+                // Appel API pour récupérer le fournisseur
+                List<supplier> suppliers = APICall.retrieveSupplier("get_supplier/" + stock.supplier_id);
+
+                // Check if the list is not empty and the first element is not null
+                if (suppliers != null && !suppliers.isEmpty() && suppliers.get(0) != null) {
+                    stock.supplier_name = suppliers.get(0).supplier_name;
+                } else {
+                    // Supplier not found or returned null
+                    stock.supplier_name = "Fournisseur introuvable";
+                    System.err.println("Supplier not found for ID: " + stock.supplier_id);
+                }
+            } catch (Exception e) {
+                // Handle API errors gracefully
+                stock.supplier_name = "Erreur";
+                System.err.println("Error fetching supplier for ID " + stock.supplier_id + ": " + e.getMessage());
+            }
         }
     }
 
