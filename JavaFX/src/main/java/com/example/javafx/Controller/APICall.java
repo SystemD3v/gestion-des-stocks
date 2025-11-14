@@ -41,9 +41,37 @@ public class APICall {
 
         return gson.fromJson(response, listType);
     }
+    public static List<Model.supplier> retrieveSupplierById(String apiURL,String id) throws Exception{
+
+        String response = apiConnection(apiURL+id);
+        response = checkBracket(response);
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Model.supplier>>(){}.getType();
+
+        return gson.fromJson(response, listType);
+    }
     public static void editSupplier(String apiURL,String id , String name, String phone, String address) throws Exception {
         apiConnection(apiURL+id+"/"+name+"/"+phone+"/"+address);
     }
+    public static void createSupplier(String apiURL, String name, String phone, String address) throws Exception {
+        String jsonInputString = String.format(
+                "{\"supplier_name\":\"%s\",\"supplier_phone\":\"%s\",\"supplier_address\":\"%s\"}",
+                name, phone, address
+        );
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/v1/" + apiURL))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(jsonInputString))
+                .build();
+
+        HttpResponse<String> response = HttpClient.newHttpClient()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("Create Supplier Response: " + response.body());
+    }
+
 
     public List<Model.user> retrieveUser(String apiURL) throws Exception{
 
