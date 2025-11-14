@@ -15,6 +15,11 @@ import java.util.List;
 
 public class APICall {
 
+
+    public static void delete(String apiURL, String ID) throws Exception {
+        apiConnectionDelete(apiURL + ID);
+    }
+
     public static List<Model.stock> retrieveStock(String apiURL) throws Exception{
 
         String response = apiConnection(apiURL);
@@ -35,6 +40,9 @@ public class APICall {
         Type listType = new TypeToken<List<Model.supplier>>(){}.getType();
 
         return gson.fromJson(response, listType);
+    }
+    public static void editSupplier(String apiURL,String id , String name, String phone, String address) throws Exception {
+        apiConnection(apiURL+id+"/"+name+"/"+phone+"/"+address);
     }
 
     public List<Model.user> retrieveUser(String apiURL) throws Exception{
