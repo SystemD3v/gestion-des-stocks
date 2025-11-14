@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db80adc5-6acb-42a4-9ad0-8246ae89501c" name="Changes" comment="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/DashBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/FournisseurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/FournisseurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/HomeScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/HomeScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commande.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commandes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Commandes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Fournisseur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/Fournisseur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/view/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +86,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev-back",
+    "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -168,11 +175,31 @@
       <option name="project" value="LOCAL" />
       <updated>1761226154482</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
+      <option name="closed" value="true" />
+      <created>1763117770280</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763117770280</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
+      <option name="closed" value="true" />
+      <created>1763117788463</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763117788463</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
