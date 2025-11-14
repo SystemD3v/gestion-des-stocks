@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="140.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Controller.HomeScreenController">
+<AnchorPane fx:controller="com.example.javafx.Controller.HomeScreenController"
+            prefHeight="720.0" prefWidth="140.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <AnchorPane prefHeight="800.0" prefWidth="140.0" style="-fx-background-color: #1E152A;">
             <children>
@@ -16,16 +20,25 @@
                 </Label>
                 <Line endX="71.0" layoutX="68.0" layoutY="67.0" startX="-68.0" stroke="WHITE" />
 
-                <Button alignment="CENTER" layoutX="36.0" layoutY="117.0" onAction="#goToDashBoard" styleClass="sidebar-button" text="Stock" textAlignment="CENTER" />
+                <Button text="DashBoard" layoutX="20" layoutY="116"
+                        onAction="#goToDashBoard"
+                        styleClass="sidebar-button" />
 
-                <Button layoutX="21" layoutY="187" onAction="#goToCommande" styleClass="sidebar-button" text="Commande" />
+                <Button text="Commande" layoutX="21" layoutY="187"
+                        onAction="#goToCommande"
+                        styleClass="sidebar-button" />
 
-                <Button layoutX="37" layoutY="257" styleClass="sidebar-button" text="Client" />
+                <Button text="Client" layoutX="37" layoutY="257"
+                        styleClass="sidebar-button" />
 
-                <Button layoutX="20" layoutY="321" styleClass="sidebar-button" text="Fournisseur" />
+                <Button text="Fournisseur" layoutX="20" layoutY="321"
+                        onAction="#goToDashFournisseur"
+                        styleClass="sidebar-button" />
 
-                <Button layoutX="21" layoutY="380" styleClass="sidebar-button" text="Statistiques" />
+                <Button text="Statistiques" layoutX="21" layoutY="380"
+                        styleClass="sidebar-button" />
             </children>
         </AnchorPane>
     </children>
 </AnchorPane>
+
