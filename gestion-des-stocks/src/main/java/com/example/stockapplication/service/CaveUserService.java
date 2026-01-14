@@ -37,8 +37,6 @@ public class CaveUserService {
                 .collect(Collectors.toList());
     }
 
-    public List<CaveUser> getUserById(Integer id) {return caveuserRepo.findCaveUserById(id);}
-
     @Transactional
     public void deleteById(Integer id) {
         caveuserRepo.deleteById(id);

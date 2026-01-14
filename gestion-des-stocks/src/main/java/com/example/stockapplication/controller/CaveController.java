@@ -215,11 +215,6 @@ public class CaveController {
         return "User bien delete : " + id ;
     }
 
-    @GetMapping("/get_user_by_id/{id}")
-    public ResponseEntity<List<CaveUser>> getUserById(@PathVariable Integer id){
-        return ResponseEntity.ok(caveuserService.getUserById(id));
-    }
-
     @PostMapping("/create_user")
     public ResponseEntity<String> createUser(@RequestBody CaveUser caveUser) {
         CaveUser createdUser = caveuserService.createCaveUser(caveUser);

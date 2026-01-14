@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db80adc5-6acb-42a4-9ad0-8246ae89501c" name="Changes" comment="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/Controller/APICall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/controller/CaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/controller/CaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/repository/CaveUserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/repository/CaveUserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/service/CaveUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/java/com/example/stockapplication/service/CaveUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestion-des-stocks/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gestion-des-stocks/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +86,7 @@
     &quot;git-widget-placeholder&quot;: &quot;dev-back&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lilia/OneDrive/Documents/Cours/JAVA/gestion-des-stocks/JavaFX&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -156,6 +164,13 @@
       <option name="presentableId" value="Default" />
       <updated>1761204489974</updated>
       <workItem from="1761204492525" duration="8394000" />
+      <workItem from="1764577214830" duration="18000" />
+      <workItem from="1764668673754" duration="462000" />
+      <workItem from="1764755300958" duration="596000" />
+      <workItem from="1764757261403" duration="627000" />
+      <workItem from="1764759153096" duration="2594000" />
+      <workItem from="1764835960838" duration="138000" />
+      <workItem from="1764880581394" duration="165000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'dev-back' of https://github.com/SystemD3v/gestion-des-stocks into dev-back&#10;&#10;# Conflicts:&#10;#&#9;JavaFX/.idea/workspace.xml&#10;#&#9;JavaFX/build.gradle.kts&#10;#&#9;JavaFX/src/main/java/com/example/javafx/view/Commandes.java&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commande.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/Commandes.fxml&#10;#&#9;JavaFX/src/main/resources/com/example/javafx/view/dashboard.fxml">
       <option name="closed" value="true" />

@@ -14,9 +14,4 @@ public interface CaveUserRepo extends JpaRepository<CaveUser, Integer> {
     List<CaveUser> findCaveUserById(Integer id);
 
     List<CaveUser> findAllByLastname(String lastname);
-
-    List<CaveUser> findCaveUserById(Integer id);
-
-    @Override
-    void deleteById(Integer id);
 }
